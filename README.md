@@ -43,3 +43,7 @@ Search project files for `[CONFIRM WITH CLIENT]`. The full client checklist is i
 ## Checks
 
 No build step or server is required. Test all links, the mobile menu, keyboard navigation, reduced motion, required form fields, upload constraints, 404 page and live endpoint after connecting it.
+
+## Mobile layout
+
+The shared stylesheet includes breakpoints at 1020px, 760px, 480px and 360px. At phone widths it switches to a single-column service list and timeline, collapses navigation behind an accessible menu button, stacks form fields, enlarges tap targets and adds a safe-area-aware sticky project CTA. Test widths around 320px, 360px, 390px, 430px, 768px and desktop before adding client content.
