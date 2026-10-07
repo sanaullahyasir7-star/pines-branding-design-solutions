@@ -81,3 +81,6 @@
  .testimonial-card,.testimonial-card+.testimonial-card{flex-basis:88%;min-height:360px}
  .testimonial-card blockquote{font-size:17px}
 }
+
+/* Keep the first client quote visible alongside the other three. */
+.testimonial-grid [data-testimonial-index="0"]{display:flex!important}
