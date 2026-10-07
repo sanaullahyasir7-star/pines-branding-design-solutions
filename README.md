@@ -7,6 +7,8 @@ Responsive, buildless multi-page website for GitHub Pages.
 - `index.html` — homepage
 - `services/`, `process/`, `work/`, `materials/`, `about/`, `faq/`, `start-project/`, `contact/` — site sections
 - `work/case-study-template.html` — reusable case study template
+- `DESIGN_NOTES.md` — concise rationale for the visual and content decisions
+- `CLIENT_LAUNCH_CHECKLIST.md` — facts, permissions and connections Pines must confirm
 - `privacy.html`, `terms.html`, `404.html` — supporting pages
 - `assets/site.css`, `assets/site.js` — shared design system and accessible interactions
 - `assets/pines-logo.webp` — supplied logo; do not distort
@@ -36,7 +38,7 @@ The repository uses the existing GitHub Actions Pages workflow. Edit the static 
 
 ## Client confirmation items
 
-Search project files for `[CONFIRM WITH CLIENT]`. Before launch, confirm the business address/markets, product formats, capabilities, materials and sourcing, process and turnaround, minimums, team/story, quote contact, testimonials, portfolio rights, legal terms, privacy details, domain owner, upload limit and Formspree endpoint. Remove illustrative placeholders and draft legal language once replaced with approved facts.
+Search project files for `[CONFIRM WITH CLIENT]`. The full client checklist is in `CLIENT_LAUNCH_CHECKLIST.md`. Remove illustrative placeholders and draft legal language once replaced with approved facts.
 
 ## Checks
 
