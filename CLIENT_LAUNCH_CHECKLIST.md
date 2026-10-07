@@ -4,10 +4,10 @@ The website intentionally avoids presenting unknown facts as final. Confirm or p
 
 ## Business and audience
 - [ ] Registered/public business name and preferred brand spelling.
-- [ ] City, country, business address, service markets and delivery areas.
-- [ ] Typical customer groups and any industries Pines wants to serve.
+- [x] Operating location and business address: House 38H, Street # 3 Ali Park St, Extension Cantt, Lahore, Punjab 54792, Pakistan. Confirm the preferred public address formatting.
+- [x] Target customer groups: small and large businesses, e-commerce startups, local bakeries, cosmetics brands and commercial entities needing custom physical assets.
 - [ ] Approved business story, founding context, team names, roles and portraits.
-- [ ] Business hours, public phone/WhatsApp, enquiry email and social links.
+- [x] Public phone / WhatsApp: +92 324 4485746. [ ] Business hours, enquiry email and social links.
 
 ## Services and production
 - [ ] Exact products offered (for example, boxes, mailers, labels, bags, stationery or brochures).
