@@ -122,6 +122,7 @@
       const details = [
         ['Name', field('name')],
         ['Company / brand', field('company')],
+        ['Phone / WhatsApp', field('phone')],
         ['Service', field('product_type')],
         ['Estimated quantity', field('quantity')],
         ['Dimensions', field('size')],
