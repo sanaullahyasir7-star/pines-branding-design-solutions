@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sanaullahyasir7-star.github.io/pines-branding-design-solutions/sitemap.xml

@@ -1,27 +1,43 @@
 # Pines Branding & Design Solutions — website
 
-A responsive, static website for Pines Branding & Design Solutions. It uses the supplied brand identity and the confirmed service summary: design, mockups, sampling, and production.
+Responsive, buildless multi-page website for GitHub Pages.
 
-## Edit the site
+## Structure
 
-- `index.html` contains the page layout, styles, motion, and project-brief form.
-- `assets/pines-logo.webp` is the supplied horizontal logo, cropped for display without changing its artwork.
-- `assets/packaging-concept.webp` is an illustrative concept image. It is not a real Pines project; replace it with approved project photography when available.
-- Push changes to `main` to publish an updated site through the included GitHub Pages workflow.
+- `index.html` — homepage
+- `services/`, `process/`, `work/`, `materials/`, `about/`, `faq/`, `start-project/`, `contact/` — site sections
+- `work/case-study-template.html` — reusable case study template
+- `privacy.html`, `terms.html`, `404.html` — supporting pages
+- `assets/site.css`, `assets/site.js` — shared design system and accessible interactions
+- `assets/pines-logo.webp` — supplied logo; do not distort
+- `assets/packaging-concept.webp` — illustrative placeholder visual, not client work
 
-## Enable GitHub Pages
+## Contact form setup (Formspree)
 
-After the repository is created, open **Settings → Pages** and select **GitHub Actions** as the build and deployment source. The workflow in `.github/workflows/pages.yml` publishes the site on pushes to `main`.
+1. Have Pines create/own a Formspree form and confirm which email should receive enquiries.
+2. Confirm file-upload support and maximum upload size on the selected Formspree plan.
+3. Edit `assets/site.js` and replace the empty `ENDPOINT` constant with the verified Formspree endpoint. This is a public form endpoint, not a secret.
+4. Confirm required fields, privacy wording, spam controls, notification behavior and file retention with Pines. Test using a client-approved test submission.
+5. The optional “Download a copy” checkbox creates a text brief only after a successful send. Files are not copied into that text file.
 
-## Add the custom domain later
+The current endpoint is intentionally blank. Until connected, the form clearly reports that online enquiries are not connected. Do not publish it as a working submission form before setup and testing.
 
-When the `.com` domain is purchased, configure it in the repository's **Settings → Pages** and follow the DNS records GitHub shows. Add the resulting `CNAME` file to the repository. The domain is intentionally not set in this draft.
+## Deploy / update on GitHub Pages
 
-## Information still to confirm with Pines
+The repository uses the existing GitHub Actions Pages workflow. Edit the static files and push changes to `main`; the workflow deploys automatically. Check the Actions tab for a successful run.
 
-- Verified email, phone, location, and preferred enquiry destination.
-- Approved project photos and descriptions.
-- Exact service formats, process details, and company story.
-- Any customer names, certifications, production claims, or sustainability claims that Pines approves for publication.
+## Add a custom domain later
 
-The current project-brief form validates its fields and downloads a text brief in the visitor's browser. It does not send or store the visitor's information. Connect a verified enquiry destination before treating it as a production lead form.
+1. Register the client-approved domain with the client as owner.
+2. Add the domain under repository Settings → Pages → Custom domain.
+3. At the registrar, add DNS records GitHub Pages currently specifies for the chosen apex or `www` host.
+4. Wait for DNS and certificate checks, then enforce HTTPS.
+5. Update canonical URLs, Open Graph URLs, `sitemap.xml`, and `robots.txt` in this project; submit the sitemap to Search Console if requested.
+
+## Client confirmation items
+
+Search project files for `[CONFIRM WITH CLIENT]`. Before launch, confirm the business address/markets, product formats, capabilities, materials and sourcing, process and turnaround, minimums, team/story, quote contact, testimonials, portfolio rights, legal terms, privacy details, domain owner, upload limit and Formspree endpoint. Remove illustrative placeholders and draft legal language once replaced with approved facts.
+
+## Checks
+
+No build step or server is required. Test all links, the mobile menu, keyboard navigation, reduced motion, required form fields, upload constraints, 404 page and live endpoint after connecting it.
