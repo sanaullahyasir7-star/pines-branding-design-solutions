@@ -43,7 +43,7 @@
     ['Dimensions',value('size') || 'Need guidance'],['Target date',value('deadline') || 'To discuss'],
     ['Budget',value('budget')],['Project details',value('details')]
   ]);
-  const refreshPrepared = () => { preview.value = formMessage(); link.href = whatsapp(preview.value); };
+  const refreshPrepared = () => { preview.value = formMessage(); link.href = whatsapp(preview.value); form.querySelector('[data-whatsapp-same-tab]').href = link.href; };
   form.addEventListener('input', () => {
     if (!prepared.hidden) { refreshPrepared(); feedback.textContent = 'Prepared message updated with your changes.'; }
   });

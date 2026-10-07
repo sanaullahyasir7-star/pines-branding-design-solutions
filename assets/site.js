@@ -22,6 +22,14 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(true); });
     document.addEventListener('click', e => { if (!e.target.closest('.site-header')) close(); });
   }
+  const pause = document.querySelector('.marquee-pause');
+  pause?.addEventListener('click', () => {
+    const paused = pause.getAttribute('aria-pressed') !== 'true';
+    pause.setAttribute('aria-pressed', String(paused));
+    pause.setAttribute('aria-label', paused ? 'Resume moving service text' : 'Pause moving service text');
+    pause.textContent = paused ? 'Resume motion' : 'Pause motion';
+    document.querySelector('.marquee-track').style.animationPlayState = paused ? 'paused' : 'running';
+  });
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   if ('IntersectionObserver' in window && !reduced.matches) {
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
