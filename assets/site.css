@@ -17,3 +17,21 @@
 .service-showcase .service-image{width:100%;height:auto;aspect-ratio:3/2;max-height:190px;object-fit:cover;margin-bottom:1rem}
 @media(max-width:1020px){.service-showcase .service-image{max-height:220px}}
 @media(max-width:600px){.service-showcase .service-image{max-height:210px}}
+
+/* Clear, compact image cards for each service category. */
+.homepage-showcase{grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.homepage-showcase .visual-card.showcase-photo{height:160px;min-height:0;aspect-ratio:auto;overflow:hidden;background:var(--sage)}
+.homepage-showcase .showcase-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.homepage-showcase .portfolio-info{padding:1rem 0 1.2rem}
+.homepage-showcase .portfolio-info h3{font-size:22px}
+.homepage-showcase .portfolio-info p{font-size:15px;line-height:1.55}
+@media(max-width:1020px){.homepage-showcase{grid-template-columns:repeat(2,minmax(0,1fr))}.homepage-showcase .visual-card.showcase-photo{height:190px}}
+@media(max-width:600px){.homepage-showcase{grid-template-columns:1fr}.homepage-showcase .visual-card.showcase-photo{height:210px}}
+/* Show all four testimonials as equal, readable cards. */
+.testimonial-feature{display:none}
+.testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;border:0}
+.testimonial-grid [data-testimonial-index="0"]{display:block}
+.testimonial-card,.testimonial-card+.testimonial-card{padding:1.45rem;background:var(--paper);border:1px solid var(--line);min-height:100%}
+.testimonial-card blockquote,.testimonial-card-featured blockquote{font:italic 20px/1.55 var(--serif);letter-spacing:0;color:var(--body)}
+.testimonial-card figcaption{margin-top:1.1rem}
+@media(max-width:760px){.testimonial-grid{display:flex;gap:.85rem;border:0}.testimonial-card,.testimonial-card+.testimonial-card{flex:0 0 88%;padding:1.25rem;border:1px solid var(--line);scroll-snap-align:start}.testimonial-card-featured blockquote{font:italic 20px/1.55 var(--serif)}}
