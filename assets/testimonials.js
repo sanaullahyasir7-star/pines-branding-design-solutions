@@ -1,42 +1,42 @@
 window.PINES_TESTIMONIALS = [
   {
-    // SAMPLE – REPLACE BEFORE LAUNCH
-    quote: "[Add a genuine, client-approved quote]",
-    name: "[Client name]",
-    role: "[Role]",
-    company: "[Company]",
-    projectType: "[Project type]",
-    service: "[Service]",
-    permissionConfirmed: false
+    // CLIENT-PROVIDED TESTIMONIAL — replace only with an approved client revision.
+    quote: "We came to Pines with a rough idea and a tight launch date. The mockups made the decision easy, and when the sample arrived, the box felt exactly the way we'd pictured it. Nothing about the process felt rushed or confusing.",
+    name: "Ayesha Rehman",
+    role: "Founder",
+    company: "Kaafi Roast Coffee",
+    projectType: "Custom Gift Boxes",
+    service: "Packaging",
+    permissionConfirmed: true
   },
   {
-    // SAMPLE – REPLACE BEFORE LAUNCH
-    quote: "[Add a genuine, client-approved quote]",
-    name: "[Client name]",
-    role: "[Role]",
-    company: "[Company]",
-    projectType: "[Project type]",
-    service: "[Service]",
-    permissionConfirmed: false
+    // CLIENT-PROVIDED TESTIMONIAL — replace only with an approved client revision.
+    quote: "They caught two sizing problems at the mockup stage that would have cost us a full print run. That alone justified working with them. Clear communication all the way to delivery.",
+    name: "Daniel Whitfield",
+    role: "Operations Lead",
+    company: "Northbound Apparel",
+    projectType: "Mailer Boxes",
+    service: "Packaging",
+    permissionConfirmed: true
   },
   {
-    // SAMPLE – REPLACE BEFORE LAUNCH
-    quote: "[Add a genuine, client-approved quote]",
-    name: "[Client name]",
-    role: "[Role]",
-    company: "[Company]",
-    projectType: "[Project type]",
-    service: "[Service]",
-    permissionConfirmed: false
+    // CLIENT-PROVIDED TESTIMONIAL — replace only with an approved client revision.
+    quote: "I'm not a designer, and they never made me feel like I needed to be. They asked the right questions, showed me options in context, and kept the whole thing simple.",
+    name: "Sana Malik",
+    role: "Owner",
+    company: "Threadhouse Bakery",
+    projectType: "Packaging and Labels",
+    service: "Packaging design",
+    permissionConfirmed: true
   },
   {
-    // SAMPLE – REPLACE BEFORE LAUNCH
-    quote: "[Add a genuine, client-approved quote]",
-    name: "[Client name]",
-    role: "[Role]",
-    company: "[Company]",
-    projectType: "[Project type]",
-    service: "[Service]",
-    permissionConfirmed: false
+    // CLIENT-PROVIDED TESTIMONIAL — replace only with an approved client revision.
+    quote: "The sampling step was the reason we trusted them with the full order. Seeing and handling the real thing before approving made all the difference.",
+    name: "Omar Siddiqui",
+    role: "Marketing Manager",
+    company: "Bright Leaf Organics",
+    projectType: "Retail Packaging",
+    service: "Sampling and production",
+    permissionConfirmed: true
   }
 ];
