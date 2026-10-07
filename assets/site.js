@@ -47,23 +47,20 @@
   const testimonialRoot = document.querySelector('[data-testimonials-preview]');
   if (testimonialRoot) {
     const items = window.PINES_TESTIMONIALS || [];
-    const feature = testimonialRoot.querySelector('[data-testimonial-feature]');
     const grid = testimonialRoot.querySelector('[data-testimonial-grid]');
     const controls = testimonialRoot.querySelector('[data-testimonial-controls]');
     const dots = testimonialRoot.querySelector('[data-testimonial-dots]');
     const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     })[char]);
-    const renderCard = (item, index, featured = false) => `
-      <figure class="testimonial-card${featured ? ' testimonial-card-featured' : ''}" data-testimonial-index="${index}">
+    const renderCard = (item, index) => `
+      <figure class="testimonial-card" data-testimonial-index="${index}">
         <blockquote>${escapeHtml(item.quote)}</blockquote>
         <figcaption><span class="person">${escapeHtml(item.name)}</span>${escapeHtml(item.role)} · ${escapeHtml(item.company)}<br>${escapeHtml(item.service)}</figcaption>
         <span class="testimonial-tag">${escapeHtml(item.projectType)}</span>
       </figure>`;
 
     if (items.length) {
-      // Desktop uses the first quote as a feature; the mobile scroller contains all four.
-      feature.innerHTML = renderCard(items[0], 0, true);
       grid.innerHTML = items.map((item, index) => renderCard(item, index)).join('');
       if (items.length > 1 && controls && dots) {
         controls.hidden = false;
@@ -105,7 +102,7 @@
         }, { passive: true });
       }
     } else {
-      feature.innerHTML = '<p class="testimonial-empty">Client testimonials will appear here.</p>';
+      grid.innerHTML = '<p class="testimonial-empty">Client testimonials will appear here.</p>';
       grid.hidden = true;
     }
   }
