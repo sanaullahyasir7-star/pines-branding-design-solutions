@@ -21,15 +21,14 @@ The website intentionally avoids presenting unknown facts as final. Confirm or p
 ## Proof and claims
 - [ ] Real portfolio projects, high-resolution photos and accurate product/material descriptions.
 - [ ] Written permission for every client name, logo, quote and project image.
-- [ ] Genuine testimonials with attribution and permission to publish.
+- [x] Four client testimonials and publication permission confirmed by the site owner.
 - [ ] Verified material availability and technical specifications.
 - [ ] Evidence for any recycled-content, recyclability, certification, sourcing or sustainability statement.
 - [ ] Confirm which proposed positioning values accurately describe how Pines works.
 
 ## Form, legal and launch
-- [ ] Client-owned Formspree account and verified endpoint/recipient email.
-- [ ] Confirm the form's file upload support, accepted formats, file-size limit, spam handling and retention.
-- [ ] Run an approved test submission and verify the notification and any uploaded attachment.
+- [x] Project brief opens a prefilled WhatsApp message for the published business number.
+- [ ] Test the WhatsApp flow on Android, iOS and desktop before launch.
 - [ ] Final privacy notice: provider, data use, access, retention, deletion and privacy contact.
 - [ ] Final business terms: quotes, payment, scope changes, proofs, cancellations, delivery and claims.
 - [ ] Client-approved domain, DNS access, canonical domain and preferred `www`/apex behavior.
@@ -38,4 +37,4 @@ The website intentionally avoids presenting unknown facts as final. Confirm or p
 
 ## Items that remain intentionally unconnected
 
-The form currently does not transmit or store enquiries. The business contact routes, domain, portfolio, testimonials, verified product scope and final legal content are not supplied yet. Connect and test these before treating the website as fully launched.
+The project brief opens WhatsApp for the visitor to review and send. The website does not transmit or store the brief. Testimonials and their publication permission are confirmed. Final legal content, domain configuration, portfolio permissions, detailed product scope and material specifications still need business-owner review.
