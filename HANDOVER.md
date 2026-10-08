@@ -58,3 +58,9 @@
 - Owner confirmed delivery in Pakistan, the UAE and other regions; destination-specific arrangements remain subject to confirmation.
 - Added optional delivery city/country to both planner and enquiry, included in WhatsApp and downloadable briefs.
 - Mobile revision verification: 184/184 browser checks passed at 360, 390, 768, 1024 and 1440 pixels. Destination summary included. No-script navigation inspected; a spacing issue was corrected with a two-column fallback menu.
+
+## Mobile overlap correction — 8 October 2026
+- Fixed third process step losing its left inset because a tablet nth-child selector overrode phone spacing. Tablet rule now applies only from 761–1020px. Both Home and Process checked.
+- Improved multi-line service heading leading and changed the mobile service strip to two readable columns.
+- Live release passed 184 existing browser regression checks. Additional heading-bound checks passed on Home at 320, 360, 390, 414, 768, 1024 and 1440px, and Process at 320, 360, 390 and 414px. All mobile stage headings retain 46px clearance; no page-wide horizontal overflow observed.
+- Added a regression assertion for process-label clearance in tests/browser.html. Screenshot: tests/screenshots/pines-mobile-sampling-fixed.jpg. Physical devices not tested.
