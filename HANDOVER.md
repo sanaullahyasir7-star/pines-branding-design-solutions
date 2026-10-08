@@ -44,3 +44,10 @@
 1. Publish approved case studies with original photography.
 2. Add a secure backend for an optional genuine AI brief assistant grounded in owner-approved service facts; define handling/retention before use.
 3. Measure real enquiry conversion and performance after launch with owner-approved analytics.
+
+## Visual evidence and final checks
+- Desktop and mobile screenshots are saved in `tests/screenshots/`.
+- All four Work photos inspected visually on desktop and mobile.
+- Mobile navigation opened using Enter; Escape closed it and returned focus to the toggle.
+- Browser console inspection showed extension metadata errors only, not application errors.
+- Release-specific asset URLs prevent stale scripts from hiding the new same-tab fallback.
