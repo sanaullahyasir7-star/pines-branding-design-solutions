@@ -73,3 +73,9 @@
 - Checked layouts at 320, 360, 390, 414, 768, 1024 and 1440 CSS pixels for page overflow, image loading, heading fit, process fit, card layout and testimonial count. Keyboard menu and carousel controls were also operated directly in the browser. The static responsive checks are repeatable in tests/brand-home.html. No physical device test or Lighthouse score is claimed.
 - At a 390px CSS viewport, the new page measured 4,572px tall against 8,481px for the previous homepage in the same browser harness.
 - Portfolio visuals are labelled as concept visuals; no new client-project claims were added.
+
+## Release follow-up — 9 October 2026
+- Confirmed the homepage hero was already eager-loaded with `fetchpriority="high"` and had no lazy-loading attribute; added `decoding="async"`.
+- Added UTM attribution to the prepared WhatsApp message (`utm_source=pines_website`, `utm_medium=whatsapp`, `utm_campaign=project_enquiry`) and a regression assertion.
+- These UTM labels are included in the prefilled message. They identify a lead only if the visitor sends the message; GitHub Pages/WhatsApp does not provide click analytics by itself.
+- Verification: JavaScript syntax check passed; exact hero attributes and generated WhatsApp URL still require a live browser check after deployment. No test enquiry will be sent.

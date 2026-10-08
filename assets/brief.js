@@ -4,7 +4,13 @@
   const form = document.querySelector('[data-project-form]');
   if (!form) return;
   const value = name => form.elements.namedItem(name)?.value.trim() || '';
-  const whatsapp = text => 'https://wa.me/923244485746?text=' + encodeURIComponent(text);
+  // WhatsApp does not report clicks back to the site. Add attribution to the
+  // prepared message so Pines can identify website-originated leads after send.
+  const whatsapp = text => {
+    const attribution = 'Source: Pines website (utm_source=pines_website; utm_medium=whatsapp; utm_campaign=project_enquiry)';
+    const params = new URLSearchParams({ text: `${text}\n\n${attribution}` });
+    return `https://wa.me/923244485746?${params.toString()}`;
+  };
   const message = rows => 'Hi Pines, I’d like to discuss a project.\n\n' + rows.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n');
   const download = (text, feedback) => {
     try {
