@@ -64,3 +64,12 @@
 - Improved multi-line service heading leading and changed the mobile service strip to two readable columns.
 - Live release passed 184 existing browser regression checks. Additional heading-bound checks passed on Home at 320, 360, 390, 414, 768, 1024 and 1440px, and Process at 320, 360, 390 and 414px. All mobile stage headings retain 46px clearance; no page-wide horizontal overflow observed.
 - Added a regression assertion for process-label clearance in tests/browser.html. Screenshot: tests/screenshots/pines-mobile-sampling-fixed.jpg. Physical devices not tested.
+
+## Visual homepage redesign — 9 October 2026
+- Rebuilt the homepage around the Pines green, olive and cream identity, keeping the existing logo, headline, services and owner-approved testimonials.
+- Reordered the homepage: concise image-led hero, four service image cards, concept showcase, compact process, swipeable client testimonials and a clear project CTA. Longer details remain on the service and process pages.
+- Mobile reviews use horizontal swipe, Previous/Next buttons, a live position indicator and Home/End/arrow-key navigation. Desktop keeps a four-card row; tablet uses two columns.
+- Mobile and desktop screenshots are attached separately with this handover.
+- Checked layouts at 320, 360, 390, 414, 768, 1024 and 1440 CSS pixels for page overflow, image loading, heading fit, process fit, card layout and testimonial count. Keyboard menu and carousel controls were also operated directly in the browser. The static responsive checks are repeatable in tests/brand-home.html. No physical device test or Lighthouse score is claimed.
+- At a 390px CSS viewport, the new page measured 4,572px tall against 8,481px for the previous homepage in the same browser harness.
+- Portfolio visuals are labelled as concept visuals; no new client-project claims were added.
