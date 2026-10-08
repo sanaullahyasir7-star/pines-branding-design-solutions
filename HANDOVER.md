@@ -35,7 +35,7 @@
 
 ## Owner information still needed
 - Approved completed-project photos, briefs, Pines contributions and exact materials/finishes for genuine case studies.
-- Product catalogue, available materials and print methods, minimum quantities, production limits, delivery areas, timing and quote policies.
+- Product catalogue, available materials and print methods, minimum quantities, production limits, specific destination arrangements, timing and quote policies.
 - Evidence for any sourcing, recycling, sustainability or certification statements.
 - Business email, opening hours and approved social links if they should be published.
 - Final custom domain and associated DNS settings when purchased.
@@ -51,3 +51,10 @@
 - Mobile navigation opened using Enter; Escape closed it and returned focus to the toggle.
 - Browser console inspection showed extension metadata errors only, not application errors.
 - Release-specific asset URLs prevent stale scripts from hiding the new same-tab fallback.
+
+## Mobile revision — 8 October 2026
+- Removed decorative arrows, stars and oversized quotation glyphs. Menu uses text controls.
+- Phone-specific hero sizing, thumbnail service rows, vertical process, static service strip, readable stacked reviews, compact introductions and full-width form actions.
+- Owner confirmed delivery in Pakistan, the UAE and other regions; destination-specific arrangements remain subject to confirmation.
+- Added optional delivery city/country to both planner and enquiry, included in WhatsApp and downloadable briefs.
+- Mobile revision verification: 184/184 browser checks passed at 360, 390, 768, 1024 and 1440 pixels. Destination summary included. No-script navigation inspected; a spacing issue was corrected with a two-column fallback menu.

@@ -169,3 +169,6 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
  .skip-cta-mobile{padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line)}
  .skip-cta-mobile .cta{min-height:48px;font-size:14px}
 }
+
+.button span:empty,.cta span:empty{display:none}
+@media(max-width:760px){html:not(.js) .navlinks{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}html:not(.js) .navlinks .cta{grid-column:1/-1}}
