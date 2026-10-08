@@ -39,7 +39,7 @@
   required.forEach(el => el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') validate(el); }));
   const formMessage = () => message([
     ['Name',value('name')],['Company / brand',value('company')],['Phone / WhatsApp',value('phone')],
-    ['Service',value('product_type')],['Estimated quantity',value('quantity') || 'Not sure'],
+    ['Service',value('product_type')],['Delivery destination',value('destination')],['Estimated quantity',value('quantity') || 'Not sure'],
     ['Dimensions',value('size') || 'Need guidance'],['Target date',value('deadline') || 'To discuss'],
     ['Budget',value('budget')],['Project details',value('details')]
   ]);
@@ -74,7 +74,7 @@
   const update = () => {
     const p = planValues();
     planText = message([
-      ['Service', p.service], ['Intended product / use', p.use || 'To discuss'],
+      ['Service', p.service], ['Delivery destination',p.destination || 'To discuss'], ['Intended product / use', p.use || 'To discuss'],
       ['Estimated quantity', p.quantity || 'Not sure'], ['Dimensions',p.size || 'Need guidance'],
       ['Artwork status',p.artwork], ['Target date',p.date || 'To discuss'],
       ['Budget',p.budget ? p.budget + ' ' + p.currency : 'To discuss']
@@ -93,7 +93,7 @@
     const addition = planText.replace('Hi Pines, I’d like to discuss a project.\n\n','');
     if ((base + '\n\n' + addition).trim().length > 4000) { planFeedback.textContent = 'Your enquiry is already long. Copy the planner brief and combine the details below.'; return; }
     // Keep existing enquiry answers; planner fills empty fields only.
-    for (const [name,v] of Object.entries({product_type:p.service,quantity:p.quantity,size:p.size,deadline:p.date,budget:p.budget ? `${p.budget} ${p.currency}` : ''})) {
+    for (const [name,v] of Object.entries({destination:p.destination,product_type:p.service,quantity:p.quantity,size:p.size,deadline:p.date,budget:p.budget ? `${p.budget} ${p.currency}` : ''})) {
       const el=form.elements.namedItem(name); if (!el.value && v) el.value=v;
     }
     details.value = [base,addition].filter(Boolean).join('\n\n'); transferredText = addition;
