@@ -87,5 +87,7 @@
 - Removed “concept showcase” and “concept visual” wording from the visitor-facing site while retaining honest descriptions of the imagery.
 - Added the owner-provided customer groups to About and updated site navigation to Capabilities. Preserved all four client testimonials without changing their wording.
 - Removed an obsolete image-label style and refreshed CSS cache versions.
-- A local static check found one H1 per page and no broken local page, asset or script references across the 10 public pages. Live deployment and behavior must be checked after the GitHub Pages workflow runs.
+- GitHub Pages deployment succeeded on commit `284bf294f16aa5ef5f4552faca372aef734001d6` (workflow run `37865454603`).
+- Live verification covered all 10 public routes at a 1363px CSS viewport: one H1 per page, all images loaded, no page-wide horizontal overflow; the homepage shows all four testimonials and the Capabilities page contains no concept labels.
+- Service anchors, planner transfer, required-field validation, copy/download actions and WhatsApp URL generation were checked earlier in this release without sending an enquiry. Physical-device testing and a new mobile-width sweep after this content-only revision were not performed; no layout CSS changed in this final pass. No Lighthouse score is claimed.
 - The custom domain remains unverified. Use the GitHub Pages URL until the DNS and GitHub Pages settings are connected.
