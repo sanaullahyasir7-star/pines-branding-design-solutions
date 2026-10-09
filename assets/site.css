@@ -39,7 +39,7 @@
 .showcase-photo img{width:100%;height:100%;object-fit:contain;transition:transform .2s}
 .showcase-photo:hover img{transform:scale(1.015)}
 .portfolio-info h2{font-size:28px;letter-spacing:-.025em;margin:.3rem 0}
-.concept-label{display:block;color:var(--olive-dark);font-size:13px}
+
 .stage-heading{font-size:29px;margin-top:1.5rem}
 /* Approved quotes are in HTML so they remain available without JavaScript. */
 .testimonials-section{background:var(--olive-wash)}

@@ -79,3 +79,13 @@
 - Added UTM attribution to the prepared WhatsApp message (`utm_source=pines_website`, `utm_medium=whatsapp`, `utm_campaign=project_enquiry`) and a regression assertion.
 - These UTM labels are included in the prefilled message. They identify a lead only if the visitor sends the message; GitHub Pages/WhatsApp does not provide click analytics by itself.
 - Verification: JavaScript syntax check passed; exact hero attributes and generated WhatsApp URL still require a live browser check after deployment. No test enquiry will be sent.
+
+
+## Final website pass — 9 October 2026
+
+- Reframed the former Work page as Capabilities because no approved case-study material was supplied. The page now explains the service categories and does not present the service images as completed customer projects.
+- Removed “concept showcase” and “concept visual” wording from the visitor-facing site while retaining honest descriptions of the imagery.
+- Added the owner-provided customer groups to About and updated site navigation to Capabilities. Preserved all four client testimonials without changing their wording.
+- Removed an obsolete image-label style and refreshed CSS cache versions.
+- A local static check found one H1 per page and no broken local page, asset or script references across the 10 public pages. Live deployment and behavior must be checked after the GitHub Pages workflow runs.
+- The custom domain remains unverified. Use the GitHub Pages URL until the DNS and GitHub Pages settings are connected.

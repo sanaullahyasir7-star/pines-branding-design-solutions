@@ -1,49 +1,41 @@
-# Pines Branding & Design Solutions — website
+# Pines Branding & Designs Solution — website
 
-Responsive, buildless multi-page website for GitHub Pages.
+A responsive, static multi-page website for Pines, built for GitHub Pages. The GitHub Pages address is the live website.
 
-## Structure
+## Visitor experience
+
+- Home, Services, Capabilities, Process, Materials, About, FAQ, Contact and Start a Project pages.
+- Packaging, print and branding services with design, mockups, sampling and production.
+- Four owner-approved client testimonials.
+- A guided Project Planner that builds a brief from visitor answers. It uses templates and browser-side JavaScript; it is not an AI assistant.
+- Service imagery introduces the business categories. The site does not present these images as named client case studies.
+
+## Enquiry flow
+
+The project form prepares a message addressed to Pines at **+92 324 4485746**. Visitors review the brief and then press Send in WhatsApp. Opening WhatsApp does not submit or send the enquiry. The site has no email form endpoint or enquiry database. Visitors can copy or download a brief before leaving the page.
+
+The prepared brief is included in the WhatsApp destination URL. Do not enter passwords, payment details or other sensitive information in the project planner.
+
+## Deploy on GitHub Pages
+
+The `.github/workflows/pages.yml` workflow publishes the allowlisted static site whenever `main` is updated. Check the repository Actions tab for the deploy run. The site has no build server or API dependency.
+
+The custom domain has not yet been verified on GitHub Pages. Keep sharing the GitHub Pages address until the client’s DNS and Pages domain configuration are connected and confirmed.
+
+## Project files
 
 - `index.html` — homepage
-- `services/`, `process/`, `work/`, `materials/`, `about/`, `faq/`, `start-project/`, `contact/` — site sections
-- `work/case-study-template.html` — reusable case study template
-- `DESIGN_NOTES.md` — concise rationale for the visual and content decisions
-- `CLIENT_LAUNCH_CHECKLIST.md` — facts, permissions and connections Pines must confirm
-- `privacy.html`, `terms.html`, `404.html` — supporting pages
-- `assets/site.css`, `assets/site.js` — shared design system and accessible interactions
-- `assets/pines-logo.webp` — supplied logo; do not distort
-- `assets/packaging-concept.webp` — illustrative placeholder visual, not client work
+- `services/`, `work/`, `process/`, `materials/`, `about/`, `faq/`, `start-project/`, `contact/` — public site sections
+- `assets/site.css`, `assets/site.js` — shared visual system and interactions
+- `assets/brief.js` — planner, WhatsApp message, copy and download behavior
+- `assets/testimonials.json` — approved testimonial source record
+- `CLIENT_LAUNCH_CHECKLIST.md` — outstanding business-owner confirmations
+- `HANDOVER.md` — engineering notes and verification history
 
-## Contact form setup (Formspree)
+## Business details still to confirm
 
-1. Have Pines create/own a Formspree form and confirm which email should receive enquiries.
-2. Confirm file-upload support and maximum upload size on the selected Formspree plan.
-3. Edit `assets/site.js` and replace the empty `ENDPOINT` constant with the verified Formspree endpoint. This is a public form endpoint, not a secret.
-4. Confirm required fields, privacy wording, spam controls, notification behavior and file retention with Pines. Test using a client-approved test submission.
-5. The optional “Download a copy” checkbox creates a text brief only after a successful send. Files are not copied into that text file.
+Exact product catalogue, available materials and print methods, minimum quantities, production capacity and timing, quote and payment terms, destination-specific delivery arrangements, business email and hours, and any approved project photos and case-study facts. Do not invent these details in site copy.
 
-The current endpoint is intentionally blank. Until connected, the form clearly reports that online enquiries are not connected. Do not publish it as a working submission form before setup and testing.
+## Verification limits
 
-## Deploy / update on GitHub Pages
-
-The repository uses the existing GitHub Actions Pages workflow. Edit the static files and push changes to `main`; the workflow deploys automatically. Check the Actions tab for a successful run.
-
-## Add a custom domain later
-
-1. Register the client-approved domain with the client as owner.
-2. Add the domain under repository Settings → Pages → Custom domain.
-3. At the registrar, add DNS records GitHub Pages currently specifies for the chosen apex or `www` host.
-4. Wait for DNS and certificate checks, then enforce HTTPS.
-5. Update canonical URLs, Open Graph URLs, `sitemap.xml`, and `robots.txt` in this project; submit the sitemap to Search Console if requested.
-
-## Client confirmation items
-
-Search project files for `[CONFIRM WITH CLIENT]`. The full client checklist is in `CLIENT_LAUNCH_CHECKLIST.md`. Remove illustrative placeholders and draft legal language once replaced with approved facts.
-
-## Checks
-
-No build step or server is required. Test all links, the mobile menu, keyboard navigation, reduced motion, required form fields, upload constraints, 404 page and live endpoint after connecting it.
-
-## Mobile layout
-
-The shared stylesheet includes breakpoints at 1020px, 760px, 480px and 360px. At phone widths it switches to a single-column service list and timeline, collapses navigation behind an accessible menu button, stacks form fields, enlarges tap targets and adds a safe-area-aware sticky project CTA. Test widths around 320px, 360px, 390px, 430px, 768px and desktop before adding client content.
+Responsive browser checks are recorded in `HANDOVER.md`. These checks do not replace testing on physical Android and iOS devices. No Lighthouse score or formal accessibility certification is claimed.

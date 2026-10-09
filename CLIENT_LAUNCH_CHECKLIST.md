@@ -3,7 +3,7 @@
 The website intentionally avoids presenting unknown facts as final. Confirm or provide each item below before launch.
 
 ## Business and audience
-- [ ] Registered/public business name and preferred brand spelling.
+- [x] Public business name: Pines Branding & Designs Solution. Confirm registered/legal spelling if it differs.
 - [x] Operating location and business address: House 38H, Street # 3 Ali Park St, Extension Cantt, Lahore, Punjab 54792, Pakistan. Confirm the preferred public address formatting.
 - [x] Target customer groups: small and large businesses, e-commerce startups, local bakeries, cosmetics brands and commercial entities needing custom physical assets.
 - [ ] Approved business story, founding context, team names, roles and portraits.
@@ -27,14 +27,14 @@ The website intentionally avoids presenting unknown facts as final. Confirm or p
 - [ ] Confirm which proposed positioning values accurately describe how Pines works.
 
 ## Form, legal and launch
-- [x] Project brief opens a prefilled WhatsApp message for the published business number.
+- [x] Project Planner and enquiry form prepare a WhatsApp message for the published business number. The visitor must press Send in WhatsApp for Pines to receive it.
 - [ ] Test the WhatsApp flow on Android, iOS and desktop before launch.
-- [ ] Final privacy notice: provider, data use, access, retention, deletion and privacy contact.
-- [ ] Final business terms: quotes, payment, scope changes, proofs, cancellations, delivery and claims.
+- [ ] Owner-approved privacy notice describing this WhatsApp-based enquiry flow, the site host and third-party services.
+- [ ] Owner-approved project terms for quotes, payment, scope changes, proofs, cancellations and delivery.
 - [ ] Client-approved domain, DNS access, canonical domain and preferred `www`/apex behavior.
-- [ ] Replace illustrative visuals and remove all placeholder labels and draft copy after approval.
+- [x] Public pages identify the service categories and do not present service images as client case studies. Optional: replace service illustrations with approved completed-project photography if Pines wants a true portfolio.
 - [ ] Review mobile layouts, keyboard navigation, reduced motion, accessibility contrast and browser behavior.
 
 ## Items that remain intentionally unconnected
 
-The project brief opens WhatsApp for the visitor to review and send. The website does not transmit or store the brief. Testimonials and their publication permission are confirmed. Final legal content, domain configuration, portfolio permissions, detailed product scope and material specifications still need business-owner review.
+The website does not submit a brief to a Pines server. When a visitor opens WhatsApp, the prepared text is included in the WhatsApp destination URL; Pines receives the enquiry only if the visitor presses Send. Testimonials and publication permission are confirmed. Final legal content, domain configuration, portfolio permissions, detailed product scope and material specifications still need business-owner review.
