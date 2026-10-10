@@ -183,7 +183,7 @@
 /* Keep the Pines landscape hero image at its natural 4:3 ratio. */
 .brand-home .bh-hero-visual img{
   display:block;
-  width:min(100%,520px);
+  width:min(100%,580px);
   max-width:100%;
   height:auto;
   aspect-ratio:4/3;
@@ -199,4 +199,10 @@
     margin-left:auto;
     object-fit:cover;
   }
+}
+
+/* Slightly larger hero visual with tighter desktop spacing. */
+@media(min-width:761px){
+  .brand-home .bh-hero{padding-block:40px}
+  .brand-home .bh-hero-visual img{width:min(100%,580px)}
 }
