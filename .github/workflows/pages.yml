@@ -30,7 +30,7 @@ jobs:
       - name: Prepare public site artifact
         run: |
           mkdir -p _site
-          cp -a .nojekyll 404.html about assets contact faq favicon.svg index.html process robots.txt services sitemap.xml start-project work _site/
+          cp -a .nojekyll 404.html about assets contact faq favicon.svg index.html privacy.html process robots.txt services sitemap.xml start-project work _site/
           rm -f _site/work/case-study-template.html
       - name: Upload website files
         uses: actions/upload-pages-artifact@v4
