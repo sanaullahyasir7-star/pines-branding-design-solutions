@@ -47,7 +47,7 @@
   };
   required.forEach(el => el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') validate(el); }));
   const formMessage = () => message([
-    ['Name',value('name')],['Company / brand',value('company')],['Phone / WhatsApp',value('phone')],['Regional representative',repNames[value('contact_region')] || 'Not selected'],
+    ['Name',value('name')],['Company / brand',value('company')],['Phone / WhatsApp',value('phone')],['Regional representative',repNames[value('contact_region')] || 'Ahsan Niaz — default contact'],
     ['Service',value('product_type')],['Delivery destination',value('destination')],['Estimated quantity',value('quantity') || 'Not sure'],
     ['Dimensions',value('size') || 'Need guidance'],['Target date',value('deadline') || 'To discuss'],
     ['Budget',value('budget')],['Project details',value('details')]
@@ -90,7 +90,7 @@
     ]);
     summary.textContent = planText; planLink.href = whatsapp(planText,p.region);
   };
-  fields.forEach(el => el.addEventListener('input', update)); update();
+  fields.forEach(el => { el.addEventListener('input', update); el.addEventListener('change', update); }); update();
   document.querySelector('[data-plan-copy]').addEventListener('click', () => copy(planText, planFeedback));
   document.querySelector('[data-plan-download]').addEventListener('click', () => download(planText, planFeedback));
   planLink.addEventListener('click', () => { planFeedback.textContent = `If WhatsApp does not open, copy your brief and message ${repPhones[planValues().region] || '+92 324 4485746'}. Press Send in WhatsApp.`; });

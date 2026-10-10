@@ -228,3 +228,6 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
 /* Brand-specific project galleries: balanced image groups on wide screens. */
 .client-project-gallery.cluckin-gallery,.client-project-gallery.vero-gallery,.client-project-gallery.ovali-grab-go-gallery{grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px;gap:20px}
 @media(max-width:600px){.client-project-gallery.cluckin-gallery,.client-project-gallery.vero-gallery,.client-project-gallery.ovali-grab-go-gallery{grid-template-columns:1fr;max-width:520px;gap:16px}}
+
+/* Keep the project planner's WhatsApp recipient visible beside its action. */
+.planner-recipient{display:grid;gap:.4rem;margin:1rem 0 .5rem}.planner-recipient label{font-size:14px;font-weight:700;color:var(--pine)}.planner-recipient select{width:100%;min-height:48px;padding:.7rem .8rem;border:1px solid var(--olive);background:var(--paper);color:var(--ink);border-radius:0}.planner-recipient select:focus-visible{outline:3px solid var(--olive);outline-offset:2px}.planner-recipient-note{margin:0;font-size:13px;color:var(--muted)}
