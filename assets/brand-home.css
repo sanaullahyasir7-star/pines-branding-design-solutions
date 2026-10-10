@@ -152,3 +152,30 @@
 /* Keep service references secondary to the larger real-work showcase. */
 .brand-home .bh-service img{aspect-ratio:1.35}
 @media(max-width:760px){.brand-home .bh-service img{aspect-ratio:1.35}}
+
+/* Homepage work is a compact editorial contact sheet; the Pines hero stays untouched. */
+.brand-home .bh-featured-work{padding-block:38px}
+.brand-home .bh-featured-work .bh-section-heading{margin-bottom:20px}
+.brand-home .bh-work-intro{font-size:15px;margin-top:8px}
+.brand-home .bh-work-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.brand-home .bh-work-card{padding:0;border:0;min-width:0}
+.brand-home .bh-work-card figure{position:relative;aspect-ratio:1.45/1;background:#e3e3d6}
+.brand-home .bh-work-card figure img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;transition:transform .3s ease}
+.brand-home .bh-work-card figure.bh-artwork img,.brand-home .bh-work-card figure.bh-contained img{object-fit:contain;padding:10px}
+.brand-home .bh-work-card figure figcaption{position:absolute;left:0;bottom:0;padding:5px 8px;font-size:8px;line-height:1.35;letter-spacing:.07em}
+.brand-home .bh-work-card-title{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0 2px;font:600 14px/1.35 var(--sans);color:var(--pine)}
+.brand-home .bh-work-card-title span{font-size:13px;color:var(--olive-dark);transition:transform .2s ease}
+.brand-home .bh-work-card:hover figure img{transform:scale(1.035)}
+.brand-home .bh-work-card:hover .bh-work-card-title{text-decoration:underline;text-underline-offset:4px}
+.brand-home .bh-work-card:focus-visible{outline:3px solid var(--olive-dark);outline-offset:5px}
+.brand-marquee-group{gap:clamp(16px,2.4vw,34px)}
+.brand-marquee-group span:not(:last-child)::after{content:"";display:inline-block;width:1px;height:.8em;margin-left:clamp(16px,2.4vw,34px);background:#c2a77e;vertical-align:-.05em;opacity:.8}
+.brand-marquee-group i{display:none}
+@media(max-width:760px){
+ .brand-home .bh-featured-work{padding-block:30px}
+ .brand-home .bh-work-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}
+ .brand-home .bh-work-card figure{aspect-ratio:1.55/1}
+ .brand-home .bh-work-card-title{font-size:12px;line-height:1.35;padding-top:7px}
+ .brand-home .bh-work-card figure figcaption{font-size:7px;padding:4px 6px}
+}
+@media(prefers-reduced-motion:reduce){.brand-home .bh-work-card figure img,.brand-home .bh-work-card-title span{transition:none}}
