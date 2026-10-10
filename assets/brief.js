@@ -83,7 +83,7 @@
   const update = () => {
     const p = planValues();
     planText = message([
-      ['Service', p.service], ['Delivery destination',p.destination || 'To discuss'], ['Regional representative',p.region || 'Choose from the contact page if needed'], ['Intended product / use', p.use || 'To discuss'],
+      ['Service', p.service], ['Delivery destination',p.destination || 'To discuss'], ['Regional representative',repNames[p.region] || 'Choose a representative'], ['Intended product / use', p.use || 'To discuss'],
       ['Estimated quantity', p.quantity || 'Not sure'], ['Dimensions',p.size || 'Need guidance'],
       ['Artwork status',p.artwork], ['Target date',p.date || 'To discuss'],
       ['Budget',p.budget ? p.budget + ' ' + p.currency : 'To discuss']
