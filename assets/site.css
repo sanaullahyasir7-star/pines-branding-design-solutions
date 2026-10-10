@@ -224,3 +224,7 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
 .client-project-gallery.ovali-digital-gallery{gap:14px}
 .client-project-gallery.ovali-digital-gallery .client-project-media img{object-fit:contain}
 @media(max-width:760px){.client-project-subsection{margin-top:32px;padding-top:24px}.client-project-subsection-heading{display:block;margin-bottom:16px}.client-project-subsection-heading h3{font-size:28px}.client-project-subsection-heading>p:last-child{margin-top:8px;font-size:14px}}
+
+/* Brand-specific project galleries: balanced image groups on wide screens. */
+.client-project-gallery.cluckin-gallery,.client-project-gallery.vero-gallery,.client-project-gallery.ovali-grab-go-gallery{grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px;gap:20px}
+@media(max-width:600px){.client-project-gallery.cluckin-gallery,.client-project-gallery.vero-gallery,.client-project-gallery.ovali-grab-go-gallery{grid-template-columns:1fr;max-width:520px;gap:16px}}
