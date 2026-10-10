@@ -206,3 +206,31 @@
   .brand-home .bh-hero{padding-block:40px}
   .brand-home .bh-hero-visual img{width:min(100%,580px)}
 }
+
+/* Quiet divider beneath the location and delivery line. */
+.brand-home .bh-location>.wrap{
+  position:relative;
+  padding-bottom:14px;
+}
+.brand-home .bh-location>.wrap::after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  height:1px;
+  background:rgba(240,239,229,.3);
+}
+.brand-home .bh-location>.wrap::before{
+  content:"";
+  position:absolute;
+  z-index:1;
+  bottom:0;
+  left:0;
+  width:58px;
+  height:2px;
+  background:#b8a47a;
+}
+@media(max-width:760px){
+  .brand-home .bh-location>.wrap{padding-bottom:12px}
+}
