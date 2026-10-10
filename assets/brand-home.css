@@ -237,3 +237,18 @@
 
 /* Responsive service thumbnails supplied for the homepage. */
 .brand-home .bh-service picture{display:block;overflow:hidden;background:var(--sage)}
+
+
+/* Subtle pine corner framing for the homepage hero. */
+.bh-hero{position:relative;display:block;overflow:hidden;isolation:isolate;padding:0}
+.bh-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);grid-template-rows:auto 1fr;gap:0 6%;align-items:center;padding-block:52px}
+.bh-branch{position:absolute;z-index:1;display:block;height:auto;pointer-events:none;user-select:none;filter:drop-shadow(0 6px 8px rgba(15,38,25,.12))}
+.bh-branch--top{width:clamp(330px,37vw,570px);left:-160px;top:-118px;opacity:.62;transform:rotate(-3deg);-webkit-mask-image:linear-gradient(135deg,#000 22%,rgba(0,0,0,.86) 58%,transparent 92%);mask-image:linear-gradient(135deg,#000 22%,rgba(0,0,0,.86) 58%,transparent 92%)}
+.bh-branch--bottom{width:clamp(300px,29vw,455px);right:-112px;bottom:-98px;opacity:.58;-webkit-mask-image:linear-gradient(315deg,#000 18%,rgba(0,0,0,.82) 58%,transparent 94%);mask-image:linear-gradient(315deg,#000 18%,rgba(0,0,0,.82) 58%,transparent 94%)}
+.bh-intro,.bh-hero-copy,.bh-hero-visual{position:relative;z-index:2}
+@media(max-width:760px){
+ .bh-hero-inner{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;gap:20px;padding-block:28px}
+ .bh-branch--top{width:245px;left:-94px;top:-54px;opacity:.28}
+ .bh-branch--bottom{width:205px;right:-94px;bottom:-44px;opacity:.28}
+}
+@media(max-width:400px){.bh-branch--bottom{display:none}.bh-branch--top{width:190px;left:-86px;top:-34px;opacity:.22}}
