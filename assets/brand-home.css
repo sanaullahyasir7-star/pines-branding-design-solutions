@@ -1,7 +1,7 @@
 /* Pines homepage: visual hierarchy and responsive layouts, isolated from inner pages. */
 .brand-home{--home-space:clamp(48px,6vw,88px)}
 .brand-home h1,.brand-home h2,.brand-home h3{letter-spacing:-.035em}
-.brand-home h2{font-size:clamp(34px,4.4vw,58px);line-height:1.08;margin:0}
+.brand-home main h2{font-size:clamp(34px,4.4vw,58px);line-height:1.08;margin:0}
 .brand-home .eyebrow{margin:0 0 14px}
 .bh-link{display:inline-flex;align-items:center;min-height:44px;font:600 14px/1.4 var(--sans);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
 .bh-link:hover{text-decoration-thickness:2px}
@@ -45,11 +45,11 @@
 .bh-contact .button{background:var(--cream);border-color:var(--cream);color:var(--pine);min-width:220px}
 .bh-contact-links{display:flex;justify-content:center;gap:24px;margin-top:16px;flex-wrap:wrap}
 .bh-contact-links a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--cream);text-decoration:underline;text-underline-offset:4px}
-.brand-home .footer{border-top:1px solid #ffffff30}
+.brand-home .footer{border-top:1px solid #ffffff30}.brand-home .footer-grid{align-items:start}.brand-home .footer h2{font-size:12px;line-height:1.4;letter-spacing:.12em;margin:0 0 1rem}
 @media(min-width:761px) and (max-width:1020px){.bh-hero{gap:0 30px}.bh-intro h1{font-size:56px}.bh-services{gap:16px}.bh-service h3{font-size:23px}.bh-hero-copy>p{font-size:16px}}
 @media(max-width:760px){
  .brand-home{--home-space:42px}
- .brand-home h2{font-size:34px}
+ .brand-home main h2{font-size:34px}
  .bh-hero{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;gap:20px;padding-block:28px}
  .bh-intro{padding:0}.bh-intro .eyebrow{font-size:10px;margin-bottom:12px}
  .bh-intro h1{font-size:clamp(44px,12.2vw,60px);line-height:1.02;margin:0;letter-spacing:-.045em}
