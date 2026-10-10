@@ -209,3 +209,7 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
 
 .service-visual-disclaimer{max-width:62ch;margin:0 0 24px;color:var(--muted);font-size:14px;line-height:1.55}
 @media(max-width:760px){.service-visual-disclaimer{font-size:12px;margin-bottom:18px}}
+
+/* Give the two confirmed Hummus Grill cap photos a balanced feature layout. */
+.client-project-gallery.hummus-gallery{grid-template-columns:repeat(2,minmax(0,300px));max-width:616px}
+@media(max-width:480px){.client-project-gallery.hummus-gallery{grid-template-columns:1fr;max-width:420px}}
