@@ -206,3 +206,6 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
 @media(max-width:360px){.client-project-gallery{gap:8px}.client-project-media img{height:150px}.client-project-heading h2{font-size:31px}}
 @media(min-width:1021px){.service-catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(min-width:761px) and (max-width:1020px){.service-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.service-visual-disclaimer{max-width:62ch;margin:0 0 24px;color:var(--muted);font-size:14px;line-height:1.55}
+@media(max-width:760px){.service-visual-disclaimer{font-size:12px;margin-bottom:18px}}

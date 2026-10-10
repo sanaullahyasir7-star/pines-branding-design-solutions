@@ -27,12 +27,6 @@
 .bh-service-meta{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin:16px 0 8px;color:var(--muted)}
 .bh-service h3{font-size:26px;line-height:1.18;margin:0 0 8px;overflow-wrap:anywhere}
 .bh-service p{font-size:15px;line-height:1.55;margin:0;color:var(--ink)}
-.bh-showcase{background:var(--sage)}
-.bh-showcase-inner{display:grid;grid-template-columns:.75fr 1.25fr;gap:7%;align-items:center;padding-block:40px}
-.bh-showcase-copy>p:not(.eyebrow){font-size:17px;line-height:1.6;max-width:32ch;margin:20px 0 12px}
-.bh-showcase-image{display:block;position:relative;text-decoration:none}
-.bh-showcase-image img{display:block;width:100%;height:auto;aspect-ratio:1.5;object-fit:cover}
-.bh-showcase-image span{display:block;background:var(--pine-dark);color:var(--cream);padding:10px 14px;font-size:11px;letter-spacing:.03em}
 .bh-steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0}
 .bh-steps li{padding-top:16px;border-top:1px solid var(--line);min-width:0}
 .bh-steps li>span{font:600 12px/1.4 var(--sans);color:var(--olive-dark);display:block;margin-bottom:14px}
@@ -75,10 +69,6 @@
  .bh-service-meta{font-size:9px;line-height:1.5;letter-spacing:.05em;margin:12px 0 6px}
  .bh-service h3{font-size:23px;line-height:1.16;margin-bottom:8px;letter-spacing:-.03em}
  .bh-service p{font-size:13px;line-height:1.5}
- .bh-showcase-inner{display:flex;flex-direction:column;align-items:stretch;gap:22px;padding-block:32px}
- .bh-showcase-copy>p:not(.eyebrow){font-size:15px;line-height:1.55;max-width:32ch;margin:14px 0 4px}
- .bh-showcase-image img{aspect-ratio:1.45;max-height:300px}
- .bh-showcase-image span{font-size:10px;padding:9px 12px}
  .bh-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px}
  .bh-steps li{padding-top:12px}.bh-steps li>span{margin-bottom:10px}
  .bh-steps h3{font-size:25px;line-height:1.2;margin-bottom:6px}
@@ -121,3 +111,44 @@
 @media(min-width:761px) and (max-width:1020px){.brand-home .bh-services{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){.brand-strip{padding:20px 0}.brand-strip-heading{align-items:flex-start;margin-bottom:8px}.brand-strip-heading .eyebrow{font-size:10px}.brand-strip-heading a{font-size:12px}.brand-marquee-group{font-size:19px}.brand-marquee-track{animation-duration:36s}}
 @media(prefers-reduced-motion:reduce){.brand-marquee-track{animation:none;transform:none;width:auto}.brand-marquee-group[aria-hidden="true"]{display:none}.brand-marquee{white-space:normal}.brand-marquee-group{display:flex;flex-wrap:wrap;gap:10px 16px;padding:0;font:600 13px/1.5 var(--sans)}.brand-marquee-group i{display:none}}
+
+
+/* Real client work leads; Pines service images remain clearly illustrative. */
+.bh-hero-visual{display:flex;flex-direction:column;align-items:flex-end}
+.bh-hero-visual img{width:auto;max-width:100%;height:min(42vw,560px);aspect-ratio:3/4;object-fit:cover}
+.bh-hero-visual figcaption{font-size:10px;letter-spacing:.075em;text-align:right}
+.bh-service-disclaimer{font-size:14px;line-height:1.55;color:var(--muted);margin:-8px 0 22px}
+.bh-featured-work{padding-top:48px}
+.bh-work-intro{max-width:54ch;font-size:16px;line-height:1.6;margin:12px 0 0;color:var(--ink)}
+.bh-work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.bh-work-card{display:block;min-width:0;color:var(--pine);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:14px}
+.bh-work-card figure{margin:0;background:var(--sage);overflow:hidden}
+.bh-work-card figure img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+.bh-work-card figure.bh-artwork img,.bh-work-card figure.bh-contained img{object-fit:contain;padding:12px}
+.bh-work-card figure figcaption{padding:9px 12px;background:var(--pine-dark);color:var(--cream);font-size:10px;line-height:1.4;letter-spacing:.08em}
+.bh-work-card-copy{padding-top:15px}
+.bh-work-card-copy>span{display:block;color:var(--muted);font-size:10px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+.bh-work-card-copy h3{font-size:26px;line-height:1.2;margin:0 0 5px}
+.bh-work-card-copy p{font-size:14px;line-height:1.5;margin:0;color:var(--ink)}
+.bh-work-card:hover figure img{transform:scale(1.025)}
+.bh-work-card:hover h3{text-decoration:underline;text-underline-offset:4px}
+@media(min-width:761px) and (max-width:1020px){.bh-work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .bh-hero-visual img{width:100%;height:auto;aspect-ratio:3/4;max-height:440px;object-fit:cover}
+ .bh-hero-visual figcaption{font-size:9px;padding-top:7px}
+ .bh-service-disclaimer{font-size:12px;margin:-10px 0 18px}
+ .bh-featured-work{padding-top:36px}
+ .bh-work-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
+ .bh-work-card-copy{padding-top:11px}
+ .bh-work-card-copy h3{font-size:21px}
+ .bh-work-card-copy p{font-size:12px}
+ .bh-work-card figure img{aspect-ratio:1/1}
+ .bh-work-card figure.bh-artwork img,.bh-work-card figure.bh-contained img{padding:8px}
+ .bh-work-card figure figcaption{font-size:9px;padding:8px 9px}
+}
+@media(max-width:430px){.bh-work-card-copy h3{font-size:18px}.bh-work-card-copy p{font-size:12px}.bh-work-card figure img,.bh-work-card figure.bh-artwork img,.bh-work-card figure.bh-contained img{aspect-ratio:1/1}}
+@media(prefers-reduced-motion:reduce){.bh-work-card figure img{transition:none}}
+
+/* Keep service references secondary to the larger real-work showcase. */
+.brand-home .bh-service img{aspect-ratio:1.35}
+@media(max-width:760px){.brand-home .bh-service img{aspect-ratio:1.35}}
