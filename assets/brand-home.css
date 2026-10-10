@@ -234,3 +234,6 @@
 @media(max-width:760px){
   .brand-home .bh-location>.wrap{padding-bottom:12px}
 }
+
+/* Responsive service thumbnails supplied for the homepage. */
+.brand-home .bh-service picture{display:block;overflow:hidden;background:var(--sage)}
