@@ -252,3 +252,31 @@
  .bh-branch--bottom{width:205px;right:-94px;bottom:-44px;opacity:.28}
 }
 @media(max-width:400px){.bh-branch--bottom{display:none}.bh-branch--top{width:190px;left:-86px;top:-34px;opacity:.22}}
+
+/* Mobile editorial polish: remove decorative arrows and keep section navigation in a clear reading order. */
+@media(max-width:760px){
+ .brand-home .bh-section-heading{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
+  margin-bottom:22px;
+ }
+ .brand-home .bh-section-heading>.bh-link{
+  align-self:flex-start;
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  padding-block:6px;
+ }
+ .brand-home .bh-work-card-title{
+  display:block;
+  padding:9px 0 8px;
+  font-size:13px;
+  line-height:1.45;
+  border-bottom:1px solid rgba(4,64,42,.16);
+ }
+ .brand-home .bh-work-card-title span[aria-hidden="true"]{
+  display:none;
+ }
+}
