@@ -7,7 +7,7 @@
   // WhatsApp does not report clicks back to the site. Add attribution to the
   // prepared message so Pines can identify website-originated leads after send.
   const reps = { 'us-gb-ie':'923244485746', 'eu':'923475801951', 'uae-me':'923349413530' };
-  const repNames = { 'us-gb-ie':'Ahsan Niaz — United States, Great Britain & Ireland', 'eu':'Usama — European Union', 'uae-me':'Sanaullah — UAE & Middle East' };
+  const repNames = { 'us-gb-ie':'Ahsan Niaz — United States, Great Britain & Ireland', 'eu':'Usama — European Union', 'uae-me':'Sanaullah — Asia, UAE & Middle East' };
   const repPhones = { 'us-gb-ie':'+92 324 4485746', 'eu':'+92 347 5801951', 'uae-me':'+92 334 9413530' };
   const whatsapp = (text, region='') => {
     const attribution = 'Source: Pines website (utm_source=pines_website; utm_medium=whatsapp; utm_campaign=project_enquiry)';
