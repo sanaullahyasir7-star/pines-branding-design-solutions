@@ -213,3 +213,14 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
 /* Give the two confirmed Hummus Grill cap photos a balanced feature layout. */
 .client-project-gallery.hummus-gallery{grid-template-columns:repeat(2,minmax(0,300px));max-width:616px}
 @media(max-width:480px){.client-project-gallery.hummus-gallery{grid-template-columns:1fr;max-width:420px}}
+
+
+/* Ovali Pizza digital portfolio subsection */
+.client-project-subsection{margin-top:44px;padding-top:32px;border-top:1px solid var(--line)}
+.client-project-subsection-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.8fr);align-items:end;column-gap:28px;row-gap:4px;margin-bottom:20px}
+.client-project-subsection-heading .eyebrow{grid-column:1/-1;margin:0 0 4px}
+.client-project-subsection-heading h3{margin:0;color:var(--green);font-family:"Zilla Slab",Georgia,serif;font-size:clamp(26px,3vw,36px);font-weight:500;line-height:1.1}
+.client-project-subsection-heading>p:last-child{max-width:48ch;margin:0 0 2px;font-size:15px}
+.client-project-gallery.ovali-digital-gallery{gap:14px}
+.client-project-gallery.ovali-digital-gallery .client-project-media img{object-fit:contain}
+@media(max-width:760px){.client-project-subsection{margin-top:32px;padding-top:24px}.client-project-subsection-heading{display:block;margin-bottom:16px}.client-project-subsection-heading h3{font-size:28px}.client-project-subsection-heading>p:last-child{margin-top:8px;font-size:14px}}
