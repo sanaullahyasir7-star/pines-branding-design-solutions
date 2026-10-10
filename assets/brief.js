@@ -6,10 +6,13 @@
   const value = name => form.elements.namedItem(name)?.value.trim() || '';
   // WhatsApp does not report clicks back to the site. Add attribution to the
   // prepared message so Pines can identify website-originated leads after send.
-  const whatsapp = text => {
+  const reps = { 'us-gb-ie':'923244485746', 'eu':'923475801951', 'uae-me':'923349413530' };
+  const repNames = { 'us-gb-ie':'Ahsan Niaz — United States, Great Britain & Ireland', 'eu':'Usama — European Union', 'uae-me':'Sanaullah — UAE & Middle East' };
+  const repPhones = { 'us-gb-ie':'+92 324 4485746', 'eu':'+92 347 5801951', 'uae-me':'+92 334 9413530' };
+  const whatsapp = (text, region='') => {
     const attribution = 'Source: Pines website (utm_source=pines_website; utm_medium=whatsapp; utm_campaign=project_enquiry)';
     const params = new URLSearchParams({ text: `${text}\n\n${attribution}` });
-    return `https://wa.me/923244485746?${params.toString()}`;
+    return `https://wa.me/${reps[region] || '923244485746'}?${params.toString()}`;
   };
   const message = rows => 'Hi Pines, I’d like to discuss a project.\n\n' + rows.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n');
   const download = (text, feedback) => {
@@ -44,12 +47,12 @@
   };
   required.forEach(el => el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') validate(el); }));
   const formMessage = () => message([
-    ['Name',value('name')],['Company / brand',value('company')],['Phone / WhatsApp',value('phone')],
+    ['Name',value('name')],['Company / brand',value('company')],['Phone / WhatsApp',value('phone')],['Regional representative',repNames[value('contact_region')] || 'Not selected'],
     ['Service',value('product_type')],['Delivery destination',value('destination')],['Estimated quantity',value('quantity') || 'Not sure'],
     ['Dimensions',value('size') || 'Need guidance'],['Target date',value('deadline') || 'To discuss'],
     ['Budget',value('budget')],['Project details',value('details')]
   ]);
-  const refreshPrepared = () => { preview.value = formMessage(); link.href = whatsapp(preview.value); form.querySelector('[data-whatsapp-same-tab]').href = link.href; };
+  const refreshPrepared = () => { preview.value = formMessage(); link.href = whatsapp(preview.value, value('contact_region')); form.querySelector('[data-whatsapp-same-tab]').href = link.href; };
   form.addEventListener('input', () => {
     if (!prepared.hidden) { refreshPrepared(); feedback.textContent = 'Prepared message updated with your changes.'; }
   });
@@ -67,7 +70,7 @@
   // if new tabs are blocked; the user can open it in the same tab via the context menu.
   // Avoid window.open: noopener can return null even when opening succeeds.
   link.addEventListener('click', () => {
-    feedback.textContent = 'If WhatsApp did not open, try the link again, or copy your brief and message +92 324 4485746. Press Send in WhatsApp to contact Pines.';
+    feedback.textContent = `If WhatsApp did not open, try the link again, or copy your brief and message ${repPhones[value('contact_region')] || '+92 324 4485746'}. Press Send in WhatsApp to contact Pines.`;
   });
   form.querySelector('[data-copy-brief]').addEventListener('click', () => copy(preview.value, feedback, preview));
   form.querySelector('[data-download-brief]').addEventListener('click', () => download(preview.value, feedback));
@@ -80,17 +83,17 @@
   const update = () => {
     const p = planValues();
     planText = message([
-      ['Service', p.service], ['Delivery destination',p.destination || 'To discuss'], ['Intended product / use', p.use || 'To discuss'],
+      ['Service', p.service], ['Delivery destination',p.destination || 'To discuss'], ['Regional representative',p.region || 'Choose from the contact page if needed'], ['Intended product / use', p.use || 'To discuss'],
       ['Estimated quantity', p.quantity || 'Not sure'], ['Dimensions',p.size || 'Need guidance'],
       ['Artwork status',p.artwork], ['Target date',p.date || 'To discuss'],
       ['Budget',p.budget ? p.budget + ' ' + p.currency : 'To discuss']
     ]);
-    summary.textContent = planText; planLink.href = whatsapp(planText);
+    summary.textContent = planText; planLink.href = whatsapp(planText,p.region);
   };
   fields.forEach(el => el.addEventListener('input', update)); update();
   document.querySelector('[data-plan-copy]').addEventListener('click', () => copy(planText, planFeedback));
   document.querySelector('[data-plan-download]').addEventListener('click', () => download(planText, planFeedback));
-  planLink.addEventListener('click', () => { planFeedback.textContent = 'If WhatsApp does not open, copy your brief and message +92 324 4485746. You must press Send in WhatsApp.'; });
+  planLink.addEventListener('click', () => { planFeedback.textContent = `If WhatsApp does not open, copy your brief and message ${repPhones[planValues().region] || '+92 324 4485746'}. Press Send in WhatsApp.`; });
   let transferredText = '';
   document.querySelector('[data-plan-transfer]').addEventListener('click', () => {
     const p = planValues();
@@ -99,7 +102,7 @@
     const addition = planText.replace('Hi Pines, I’d like to discuss a project.\n\n','');
     if ((base + '\n\n' + addition).trim().length > 4000) { planFeedback.textContent = 'Your enquiry is already long. Copy the planner brief and combine the details below.'; return; }
     // Keep existing enquiry answers; planner fills empty fields only.
-    for (const [name,v] of Object.entries({destination:p.destination,product_type:p.service,quantity:p.quantity,size:p.size,deadline:p.date,budget:p.budget ? `${p.budget} ${p.currency}` : ''})) {
+    for (const [name,v] of Object.entries({destination:p.destination,contact_region:p.region,product_type:p.service,quantity:p.quantity,size:p.size,deadline:p.date,budget:p.budget ? `${p.budget} ${p.currency}` : ''})) {
       const el=form.elements.namedItem(name); if (!el.value && v) el.value=v;
     }
     details.value = [base,addition].filter(Boolean).join('\n\n'); transferredText = addition;

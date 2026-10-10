@@ -1,18 +1,18 @@
 # Pines Branding & Designs Solution — website
 
-A responsive, static multi-page website for Pines, built for GitHub Pages. The GitHub Pages address is the live website.
+A responsive, static multi-page website for Pines, built for GitHub Pages. The current GitHub Pages address is the live website.
 
 ## Visitor experience
 
-- Home, Services, Capabilities, Process, Materials, About, FAQ, Contact and Start a Project pages.
-- Packaging, print and branding services with design, mockups, sampling and production.
+- Home, Services, Selected Work, Process, About, FAQ, Contact and Start a Project pages.
+- Packaging, Print & Paper, Branding & Design, Digital Branding, and Mockups, Sampling & Production.
 - Four owner-approved client testimonials.
 - A guided Project Planner that builds a brief from visitor answers. It uses templates and browser-side JavaScript; it is not an AI assistant.
 - Service imagery introduces the business categories. The site does not present these images as named client case studies.
 
 ## Enquiry flow
 
-The project form prepares a message addressed to Pines at **+92 324 4485746**. Visitors review the brief and then press Send in WhatsApp. Opening WhatsApp does not submit or send the enquiry. The site has no email form endpoint or enquiry database. Visitors can copy or download a brief before leaving the page.
+The project form routes a prepared WhatsApp brief to the regional representative selected by the visitor. Visitors review the brief and then press Send in WhatsApp. Opening WhatsApp does not submit or send the enquiry. The site has no email form endpoint or enquiry database. Visitors can copy or download a brief before leaving the page.
 
 The prepared brief is included in the WhatsApp destination URL. Do not enter passwords, payment details or other sensitive information in the project planner.
 
@@ -20,12 +20,12 @@ The prepared brief is included in the WhatsApp destination URL. Do not enter pas
 
 The `.github/workflows/pages.yml` workflow publishes the allowlisted static site whenever `main` is updated. Check the repository Actions tab for the deploy run. The site has no build server or API dependency.
 
-The custom domain has not yet been verified on GitHub Pages. Keep sharing the GitHub Pages address until the client’s DNS and Pages domain configuration are connected and confirmed.
+The custom domain has not yet been verified on GitHub Pages. Keep sharing the GitHub Pages address until DNS and Pages domain configuration are connected and confirmed.
 
 ## Project files
 
 - `index.html` — homepage
-- `services/`, `work/`, `process/`, `materials/`, `about/`, `faq/`, `start-project/`, `contact/` — public site sections
+- `services/`, `work/`, `process/`, `about/`, `faq/`, `start-project/`, `contact/` — public site sections
 - `assets/site.css`, `assets/site.js` — shared visual system and interactions
 - `assets/brief.js` — planner, WhatsApp message, copy and download behavior
 - `assets/testimonials.json` — approved testimonial source record

@@ -4,7 +4,7 @@ const load=(path,width)=>new Promise(resolve=>{frame.width=width;frame.onload=()
 document.querySelector('#show').onclick=async()=>{if(document.querySelector('#nojs').checked)frame.setAttribute('sandbox','allow-same-origin');else frame.removeAttribute('sandbox');await load(document.querySelector('#page').value,document.querySelector('#width').value);const hash=document.querySelector('#section').value;if(hash)frame.contentWindow.scrollTo(0,frame.contentDocument.querySelector(hash).offsetTop-80);status.textContent='View ready';};
 document.querySelector('#run').onclick=async()=>{
  const rows=[]; const check=(label,ok,detail='')=>{rows.push({label,pass:!!ok,detail});result.textContent=JSON.stringify(rows,null,2);}; status.textContent='Checking…';
- const paths=['../index.html','../services/','../process/','../work/','../materials/','../about/','../faq/','../start-project/','../contact/','../404.html'];
+ const paths=['../index.html','../services/','../process/','../work/','../about/','../faq/','../start-project/','../contact/','../404.html'];
  for(const width of [360,390,768,1024,1440])for(const path of paths){await load(path,width);const d=frame.contentDocument,w=frame.contentWindow;
  check(`${width} ${path}: no horizontal overflow`,d.documentElement.scrollWidth<=d.documentElement.clientWidth,`${d.documentElement.scrollWidth}/${w.innerWidth}`);
  check(`${width} ${path}: one H1`,d.querySelectorAll('h1').length===1);

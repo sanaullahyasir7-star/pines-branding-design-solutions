@@ -173,3 +173,36 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
 
 .button span:empty,.cta span:empty{display:none}
 @media(max-width:760px){html:not(.js) .navlinks{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}html:not(.js) .navlinks .cta{grid-column:1/-1}}
+
+/* Regional contacts and real client media galleries */
+.regional-contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.regional-contact-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:clamp(22px,3vw,38px);background:var(--paper);min-height:290px}
+.regional-contact-card .number{font-size:11px;line-height:1.55;letter-spacing:.08em;color:var(--olive-dark);font-weight:700}
+.regional-contact-card h2{font-size:clamp(30px,3vw,42px);margin:8px 0 0}
+.regional-contact-card p{font-size:16px;margin:0;min-height:52px}
+.regional-contact-card .button{margin-top:auto;min-height:48px}
+.regional-contact-card .text-arrow{font-size:14px;text-decoration:underline;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
+.regional-note{margin:24px 0 0;padding:16px 18px;background:var(--olive-wash);color:var(--ink)}
+.contact-brief-cta{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.contact-brief-cta p{margin:0}
+.brand-name-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:0;margin:0;list-style:none;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.brand-name-grid li{display:flex;align-items:center;min-height:84px;padding:16px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font:500 clamp(18px,2vw,26px)/1.2 var(--serif);color:var(--pine-dark)}
+.selected-projects{display:grid;gap:0}
+.client-project{padding:clamp(42px,6vw,78px) 0;border-bottom:1px solid var(--line);scroll-margin-top:110px}
+.client-project:first-child{padding-top:0}
+.client-project:last-child{border-bottom:0}
+.client-project-heading{display:grid;grid-template-columns:1fr minmax(260px,.75fr);align-items:end;gap:30px;margin-bottom:26px}
+.client-project-heading .eyebrow{margin-bottom:12px}
+.client-project-heading h2{font-size:clamp(34px,4vw,54px);margin:0}
+.client-project-heading>p{max-width:440px;margin:0 0 4px;font-size:16px}
+.client-project-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:start}
+.client-project-media{margin:0;min-width:0;background:var(--sage)}
+.client-project-media img{width:100%;height:clamp(190px,21vw,310px);object-fit:contain;padding:8px}
+.client-project-media figcaption{padding:10px 12px 12px;font-size:12px;line-height:1.45;color:var(--body)}
+.client-project-media video{display:block;width:100%;height:clamp(220px,25vw,360px);object-fit:contain;background:#17291e}
+.client-project-media.video-media{grid-column:span 2}
+@media(max-width:1020px){.regional-contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-name-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.client-project-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.client-project-media img{height:250px}}
+@media(max-width:760px){.regional-contact-grid{grid-template-columns:1fr}.regional-contact-card{min-height:0;padding:24px}.regional-contact-card p{min-height:0}.regional-contact-card .button{margin-top:4px}.contact-brief-cta{display:grid;align-items:start}.contact-brief-cta .button{width:100%}.brand-name-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-name-grid li{min-height:70px;padding:12px;font-size:18px}.client-project{padding:42px 0}.client-project-heading{display:block;margin-bottom:18px}.client-project-heading h2{font-size:34px}.client-project-heading>p{margin-top:12px;font-size:15px}.client-project-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.client-project-media img{height:clamp(150px,48vw,230px);padding:5px}.client-project-media figcaption{font-size:11px;padding:8px}.client-project-media.video-media{grid-column:1/-1}.client-project-media video{height:min(74vh,520px)}}
+@media(max-width:360px){.client-project-gallery{gap:8px}.client-project-media img{height:150px}.client-project-heading h2{font-size:31px}}
+@media(min-width:1021px){.service-catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:761px) and (max-width:1020px){.service-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

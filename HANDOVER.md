@@ -83,11 +83,22 @@
 
 ## Final website pass — 9 October 2026
 
-- Reframed the former Work page as Capabilities because no approved case-study material was supplied. The page now explains the service categories and does not present the service images as completed customer projects.
+- Reframed the former Work page as Capabilities because no approved case-study material was supplied. The page now explains the actual service categories and does not present the service images as completed customer projects.
 - Removed “concept showcase” and “concept visual” wording from the visitor-facing site while retaining honest descriptions of the imagery.
 - Added the owner-provided customer groups to About and updated site navigation to Capabilities. Preserved all four client testimonials without changing their wording.
 - Removed an obsolete image-label style and refreshed CSS cache versions.
-- GitHub Pages deployment succeeded on commit `284bf294f16aa5ef5f4552faca372aef734001d6` (workflow run `37865454603`).
-- Live verification covered all 10 public routes at a 1363px CSS viewport: one H1 per page, all images loaded, no page-wide horizontal overflow; the homepage shows all four testimonials and the Capabilities page contains no concept labels.
-- Service anchors, planner transfer, required-field validation, copy/download actions and WhatsApp URL generation were checked earlier in this release without sending an enquiry. Physical-device testing and a new mobile-width sweep after this content-only revision were not performed; no layout CSS changed in this final pass. No Lighthouse score is claimed.
+- A local static check found one H1 per page and no broken local page, asset or script references across the 10 public pages. Live deployment and behavior still need to be checked after the GitHub Pages workflow runs.
 - The custom domain remains unverified. Use the GitHub Pages URL until the DNS and GitHub Pages settings are connected.
+
+
+## Client update — 10 October 2026
+
+- Added Digital Branding as a service and updated the homepage service grid and project brief options.
+- Updated the public location to Islamabad, Pakistan; delivery wording now says worldwide.
+- Added regional contacts: Ahsan Niaz (United States, Great Britain and Ireland), Usama (European Union), and Sanaullah (UAE and Middle East, including Saudi Arabia). The project planner and WhatsApp form can route messages to a selected representative.
+- Removed the Materials page from the public navigation, sitemap and GitHub Pages publish allowlist.
+- Added a reduced-motion-aware brand-name strip on the homepage and a selected-work gallery with individual sections for clearly identified projects.
+- Optimized selected supplied photos to WebP, removed duplicate media from the selected gallery, and added controlled, lazy-loaded video players.
+- The supplied names Pineapple Sol, Hummus Grill and Family Homemade have no confidently matched visual in this ZIP. A packaging photo is visibly branded Balkan Homemade; do not assign it to Family Homemade without client confirmation. Other visible marks include Vero Coffee & Gelato and Grab & Go.
+- Search titles/descriptions, LocalBusiness data, sitemap and robots.txt were updated for the current GitHub Pages domain. The custom domain and Search Console remain unconnected.
+- Static page, metadata, local-link, asset-reference, service-anchor and JavaScript syntax checks have been run locally. Physical-device testing and live deployment verification remain pending until the Pages workflow completes.
