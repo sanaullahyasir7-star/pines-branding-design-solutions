@@ -248,3 +248,7 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
 .regional-contact-email span{font-size:10px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;color:var(--olive-dark);font-weight:700}
 .regional-contact-email a{max-width:100%;font-size:13px;line-height:1.5;overflow-wrap:anywhere;color:var(--pine-dark);text-decoration:underline;text-decoration-color:rgba(2,61,37,.3);text-underline-offset:3px}
 .regional-contact-email a:hover{text-decoration-color:currentColor}
+
+.contact-page .page-hero{padding-block:clamp(54px,6vw,78px)}
+.contact-page .section.section-paper{padding-block:clamp(48px,5.5vw,76px)}
+@media(max-width:600px){.contact-page .page-hero{padding-block:34px}.contact-page .section.section-paper{padding-block:40px}}
