@@ -242,3 +242,9 @@ summary::after{font:500 12px/1.4 var(--sans);letter-spacing:0;top:1.6rem}
 .contact-email-list p{display:flex;flex-direction:column;gap:4px;margin:0;font-size:14px;line-height:1.5}
 .contact-email-list a{overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:560px){.contact-email-list{grid-template-columns:1fr;gap:12px}}
+
+/* Contact page: keep each email with its regional representative. */
+.regional-contact-email{width:100%;display:grid;gap:5px;padding-top:10px;border-top:1px solid var(--line)}
+.regional-contact-email span{font-size:10px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;color:var(--olive-dark);font-weight:700}
+.regional-contact-email a{max-width:100%;font-size:13px;line-height:1.5;overflow-wrap:anywhere;color:var(--pine-dark);text-decoration:underline;text-decoration-color:rgba(2,61,37,.3);text-underline-offset:3px}
+.regional-contact-email a:hover{text-decoration-color:currentColor}
