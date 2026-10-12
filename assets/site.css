@@ -320,3 +320,6 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 
 /* Let the region shortcuts wrap before tablet widths can overflow the page. */
 @media(min-width:700px) and (max-width:1099px){.contact-page .contact-region-nav{align-items:flex-start;flex-wrap:wrap;gap:12px 16px}.contact-page .contact-region-links{flex-wrap:wrap}}
+
+/* Keep the list numerals above WCAG AA contrast on cream. */
+.contact-page .contact-message-list .contact-list-number{color:#465637}
