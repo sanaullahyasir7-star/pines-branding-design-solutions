@@ -283,7 +283,7 @@
 
 
 /* Keep the mockups and sampling service title on one line. */
-.brand-home .bh-service:nth-child(4) h3{white-space:nowrap;font-size:clamp(15px,1.05vw,19px);letter-spacing:-.045em}
+.brand-home .bh-service:nth-child(4) h3{white-space:nowrap}
 /* Add a visible separator across the Nescafe-to-Peri-Peri marquee loop. */
 @media(prefers-reduced-motion:reduce){.brand-marquee-group span:last-child::after{display:none}}
-@media(max-width:760px){.brand-home .bh-service:nth-child(4) h3{font-size:clamp(12px,3.5vw,15px)}}
+@media(max-width:760px){.brand-home .bh-service:nth-child(4) h3{font-size:clamp(16px,4.6vw,20px)}}
