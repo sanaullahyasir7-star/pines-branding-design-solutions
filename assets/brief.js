@@ -9,6 +9,7 @@
   const reps = { 'us-gb-ie':'15169302942', 'eu':'923475801951', 'uae-me':'447311102182' };
   const repNames = { 'us-gb-ie':'Aiden M. — United States, Great Britain & Ireland', 'eu':'Andy A . — European Union', 'uae-me':'Sanaullah Y. — Asia, UAE & Middle East' };
   const repPhones = { 'us-gb-ie':'+1 (516) 930-2942', 'eu':'+92 347 5801951', 'uae-me':'+44 7311 102182' };
+  const repEmails = { 'us-gb-ie':'aiden@pinesbrandingdesignsolutions.com', 'eu':'logistics@pinesbrandingdesignsolutions.com', 'uae-me':'hello@pinesbrandingdesignsolutions.com' };
   const whatsapp = (text, region='') => {
     const attribution = 'Source: Pines website (utm_source=pines_website; utm_medium=whatsapp; utm_campaign=project_enquiry)';
     const params = new URLSearchParams({ text: `${text}\n\n${attribution}` });
@@ -86,6 +87,7 @@
   const summary = document.querySelector('[data-plan-summary]');
   const planFeedback = document.querySelector('[data-plan-feedback]');
   const planLink = document.querySelector('[data-plan-whatsapp]');
+  const planRegionEmail = document.querySelector('[data-plan-region-email]');
   let planText = '';
   const planValues = () => Object.fromEntries(fields.map(el => [el.dataset.plan, el.value.trim()]));
   const update = () => {
@@ -97,6 +99,7 @@
       ['Budget',p.budget ? p.budget + ' ' + p.currency : 'To discuss']
     ]);
     summary.textContent = planText; planLink.href = whatsapp(planText,p.region);
+    if (planRegionEmail) { const email = repEmails[p.region] || repEmails['us-gb-ie']; planRegionEmail.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`; planRegionEmail.textContent = email; }
   };
   fields.forEach(el => { el.addEventListener('input', update); el.addEventListener('change', update); }); update();
   document.querySelector('[data-plan-copy]').addEventListener('click', () => copy(planText, planFeedback));
