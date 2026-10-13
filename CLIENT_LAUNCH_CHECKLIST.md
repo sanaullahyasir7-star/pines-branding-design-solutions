@@ -27,7 +27,7 @@
 - [x] Page titles, descriptions, canonical URLs, Open Graph/Twitter metadata, sitemap and robots.txt use the live .com domain.
 - [x] Homepage image candidates use responsive sources; all homepage images loaded in the final desktop browser check with no horizontal overflow.
 - [x] The updated responsive homepage assets are live at https://pinesbrandingdesignsolutions.com/.
-- [x] PageSpeed Insights completed on the preceding image-optimization commit: mobile 89, Accessibility 100, Best Practices 100, SEO 100; FCP 2.6s, LCP 2.9s, TBT 0ms, CLS 0.00, Speed Index 4.4s. A final run after the last responsive-source update remained in Google's loading state, so repeat the measurement before quoting it as the current build score.
+- [x] Final PageSpeed Insights mobile run: 92 performance, Accessibility 100, Best Practices 100, SEO 100; FCP 2.6s, LCP 2.7s, TBT 0ms, CLS 0.00, Speed Index 2.8s. Captured on 14 Oct 2026 with Lighthouse 13.5.0, Moto G Power emulation and slow 4G. [View the report](https://pagespeed.web.dev/analysis/https-pinesbrandingdesignsolutions-com/ioc3mb00yo?form_factor=mobile).
 - [ ] Verify the domain in Google Search Console and submit the sitemap. This requires a signed-in owner account and DNS verification access.
 - [ ] Review on physical Android and iOS devices and with a screen reader.
 

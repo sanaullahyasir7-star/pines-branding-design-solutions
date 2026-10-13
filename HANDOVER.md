@@ -9,12 +9,12 @@
 ### Changes released
 - Added smaller responsive WebP variants for the homepage hero, pine corner branches, header/footer logos, three featured project images, the Nescafé video poster, and five service illustrations. The original media files remain in the repository; the site selects the appropriate smaller version through `srcset` and `sizes`.
 - Added a responsive preload for the hero image and explicit display dimensions for the optimized logo files.
-- The latest commit is `b89f32ba5ceccf3f5866f4ffd7bb0f4d26613d2a`. The updated homepage and all added variants are live at https://pinesbrandingdesignsolutions.com/.
+- The latest website code/assets commit is `b89f32ba5ceccf3f5866f4ffd7bb0f4d26613d2a`. The updated homepage and all added variants are live at https://pinesbrandingdesignsolutions.com/.
 
 ### Verification completed
 - Reloaded the deployed homepage and confirmed the updated responsive source lists, current image candidates, one H1, and all 14 homepage images decoded.
 - At the available desktop browser width of 1363 CSS px, the document measured 1348 px wide, with no page-wide horizontal overflow.
-- PageSpeed Insights completed on the preceding optimization commit at 14 Oct 2026, 1:28 AM GMT+5: Mobile performance 89, Accessibility 100, Best Practices 100, SEO 100; FCP 2.6s, LCP 2.9s, TBT 0ms, CLS 0.00, Speed Index 4.4s. This run was before the second, more precise mobile/retina image candidates. A fresh PageSpeed run after the final candidate update remained in Google’s loading state, so no score is claimed for the latest code.
+- Final PageSpeed Insights run at 14 Oct 2026, 1:39 AM GMT+5: Mobile performance 92, Accessibility 100, Best Practices 100, SEO 100; FCP 2.6s, LCP 2.7s, TBT 0ms, CLS 0.00, Speed Index 2.8s. Lighthouse 13.5.0 on an emulated Moto G Power with slow 4G. Report: https://pagespeed.web.dev/analysis/https-pinesbrandingdesignsolutions-com/ioc3mb00yo?form_factor=mobile. The report still identifies render-blocking requests (estimated 1,750ms) and up to 93KiB of further image savings; the site scores above 90 without removing fonts, reducing visible content or changing the approved design.
 - The final homepage browser console showed no site-originated errors; the logged errors came from the browser’s installed extension.
 
 ### Still requires owner or account access
