@@ -491,3 +491,6 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 
 /* Keep service brief numerals readable on light surfaces. */
 .services-page .services-brief-list li>span{color:var(--dark-olive)}
+
+/* Reserve brand-mark geometry before logo files finish loading. */
+.brand img,.footer-logo{aspect-ratio:874/317}
