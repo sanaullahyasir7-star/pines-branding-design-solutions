@@ -344,11 +344,12 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 #digital-services .service-details strong{color:#17291e}
 #digital-services .service-details .text-arrow{align-self:flex-start;margin-top:auto;color:#04402a}
 #digital-services .text-arrow:focus-visible{outline:3px solid #66754b;outline-offset:3px}
-html.js #digital-services .reveal{opacity:0;transform:translateY(20px);transition:opacity 650ms ease-out,transform 650ms ease-out}
-html.js #digital-services .section-heading.reveal{transform:translateY(12px)}
-html.js #digital-services .reveal.in{opacity:1;transform:translateY(0)}
-html.js #digital-services .digital-service-tile:nth-child(3n + 2){transition-delay:100ms}
-html.js #digital-services .digital-service-tile:nth-child(3n){transition-delay:200ms}
+html.digital-reveal-ready #digital-services .reveal{opacity:0;transform:translateY(20px);transition:opacity 650ms ease-out,transform 650ms ease-out}
+html.digital-reveal-ready #digital-services .section-heading.reveal{transform:translateY(12px)}
+html.digital-reveal-ready #digital-services .reveal.in{opacity:1;transform:translateY(0)}
+html.digital-reveal-ready #digital-services .digital-service-tile.reveal.in:hover,html.digital-reveal-ready #digital-services .digital-service-tile.reveal.in:focus-within{transform:translateY(-4px)}
+html.digital-reveal-ready #digital-services .digital-service-tile:nth-child(3n + 2){transition-delay:100ms}
+html.digital-reveal-ready #digital-services .digital-service-tile:nth-child(3n){transition-delay:200ms}
 @media(max-width:1099px){#digital-services .digital-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:699px){#digital-services .digital-service-grid{grid-template-columns:1fr}#digital-services .digital-service-tile{padding:24px 22px}#digital-services .digital-service-tile h3{font-size:26px}}
-@media(prefers-reduced-motion:reduce){#digital-services .digital-service-tile,#digital-services .digital-service-tile::before{transition:none}#digital-services .digital-service-tile:hover,#digital-services .digital-service-tile:focus-within{transform:none}#digital-services .digital-service-tile:hover::before,#digital-services .digital-service-tile:focus-within::before{transform:scaleX(0)}html.js #digital-services .reveal,html.js #digital-services .reveal.in{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){#digital-services .digital-service-tile,#digital-services .digital-service-tile::before{transition:none}#digital-services .digital-service-tile:hover,#digital-services .digital-service-tile:focus-within{transform:none}#digital-services .digital-service-tile:hover::before,#digital-services .digital-service-tile:focus-within::before{transform:scaleX(0)}html.digital-reveal-ready #digital-services .reveal,html.digital-reveal-ready #digital-services .reveal.in{opacity:1;transform:none;transition:none}}
