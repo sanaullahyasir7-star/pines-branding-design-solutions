@@ -555,3 +555,28 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 .planner-recipient-email a{color:var(--pine);font-weight:600;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
 .planner-recipient-email a:focus-visible{outline:3px solid var(--olive);outline-offset:3px}
 @media(max-width:760px){.footer-email-links{gap:8px}.footer-email-links a{font-size:13px}}
+
+
+/* Align service preparation rows and testimonial details on wider screens. */
+@media (min-width:700px){
+  .services-page .service-card h3{min-height:2.25em}
+  .services-page .service-card-summary{min-height:calc(1.58em * 3)}
+}
+@media (min-width:700px) and (max-width:1099px){
+  .services-page .service-card-summary{min-height:calc(1.55em * 4)}
+}
+@media (max-width:699px){
+  .services-page .service-card h3,
+  .services-page .service-card-summary{min-height:0}
+}
+@media (min-width:761px){
+  .testimonial-grid{align-items:stretch}
+  .testimonial-card{height:100%}
+  .testimonial-card figcaption{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    min-height:calc(4.8em + 12px);
+  }
+  .testimonial-card cite{display:block;min-height:4.8em}
+}
