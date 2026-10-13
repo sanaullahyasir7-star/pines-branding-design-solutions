@@ -74,6 +74,14 @@
   });
   form.querySelector('[data-copy-brief]').addEventListener('click', () => copy(preview.value, feedback, preview));
   form.querySelector('[data-download-brief]').addEventListener('click', () => download(preview.value, feedback));
+  // Service links on the Services page can preselect the matching planner and enquiry options.
+  const requestedService = new URLSearchParams(window.location.search).get('service');
+  if (requestedService) {
+    const plannerService = document.querySelector('#plan-service');
+    const enquiryProduct = form.elements.namedItem('product_type');
+    if (plannerService && [...plannerService.options].some(option => option.value === requestedService)) plannerService.value = requestedService;
+    if (enquiryProduct && [...enquiryProduct.options].some(option => option.value === requestedService)) enquiryProduct.value = requestedService;
+  }
   const fields = [...document.querySelectorAll('[data-plan]')];
   const summary = document.querySelector('[data-plan-summary]');
   const planFeedback = document.querySelector('[data-plan-feedback]');
