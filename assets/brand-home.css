@@ -276,3 +276,99 @@
 @media(min-width:700px) and (max-width:1099px){.testimonial-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:699px){.testimonial-grid.is-carousel{display:grid;grid-auto-flow:column;grid-auto-columns:85%;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 12px;scrollbar-width:none}.testimonial-grid.is-carousel .testimonial-card{scroll-snap-align:center}.testimonials-dots:not([hidden]){display:flex;justify-content:center;gap:4px;margin-top:8px}.testimonials-dots button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:none;cursor:pointer}.testimonials-dots button span{width:8px;height:8px;border-radius:50%;background:var(--olive);opacity:.4}.testimonials-dots button[aria-current=true] span{opacity:1;transform:scale(1.25)}}
 @media(prefers-reduced-motion:reduce){.testimonials :is(*,*:hover,*:focus-within,*:hover *){transition:none!important;transform:none!important}.testimonials .testimonials-heading,.testimonials .testimonial-card{opacity:1!important}.testimonials .testimonials-underline,.testimonials .testimonial-card:before{transform:scaleX(1)!important}.testimonials .testimonial-card:after{opacity:0!important}}}
+
+/* Phone layout refinement: keep the home page compact, clear, and ordered for touch. */
+@media(max-width:760px){
+  .brand-home{--home-space:34px}
+  .brand-home main h2{font-size:clamp(29px,8vw,34px);line-height:1.12}
+  .bh-hero-inner{
+    grid-template-areas:"intro" "copy" "visual";
+    grid-template-columns:minmax(0,1fr);
+    gap:12px;
+    padding-block:25px 24px;
+  }
+  .bh-intro{grid-area:intro}
+  .bh-intro h1{font-size:clamp(43px,11.8vw,54px);line-height:1.02;margin:0}
+  .bh-hero-copy{grid-area:copy}
+  .bh-hero-copy>p{font-size:15px;line-height:1.5;margin:0 0 10px}
+  .bh-actions{display:flex;align-items:center;justify-content:flex-start;gap:14px;flex-wrap:wrap}
+  .bh-actions .button{width:auto;min-height:46px;padding:12px 16px;font-size:13px}
+  .bh-actions .bh-link{justify-self:auto;min-height:44px;font-size:12px}
+  .bh-hero-visual{grid-area:visual;margin-top:2px}
+  .bh-hero-visual img{width:100%;max-width:none;aspect-ratio:4/3;max-height:none;object-fit:cover}
+  .bh-hero-visual figcaption{font-size:8px}
+  .bh-branch--top{width:190px;left:-88px;top:-34px;opacity:.12}
+  .bh-branch--bottom{display:none}
+
+  .brand-strip{padding:17px 0}
+  .brand-strip-heading{align-items:center;margin-bottom:4px}
+  .brand-strip-heading .eyebrow{font-size:9px;letter-spacing:.13em}
+  .brand-strip-heading a{font-size:11px;min-height:40px}
+  .brand-marquee-group{font-size:17px}
+
+  .brand-home .bh-section{padding-block:34px}
+  .brand-home .bh-section-heading{gap:7px;margin-bottom:17px}
+  .brand-home .bh-section-heading .eyebrow{margin-bottom:7px}
+  .brand-home .bh-section-heading>.bh-link{font-size:11px;min-height:40px;padding-block:3px}
+  .brand-home .bh-work-intro{font-size:13px;line-height:1.5;margin-top:6px}
+  .brand-home .bh-featured-work{padding-block:27px}
+  .brand-home .bh-work-grid{gap:12px 10px}
+  .brand-home .bh-work-card figure{aspect-ratio:1.5/1}
+  .brand-home .bh-work-card-title{font-size:11px;line-height:1.35;padding:6px 0}
+  .brand-home .bh-work-card figure figcaption{font-size:7px}
+
+  /* Compact service rows keep all five choices visible without cramped two-column titles. */
+  .brand-home .bh-services{grid-template-columns:minmax(0,1fr);gap:0}
+  .brand-home .bh-service{
+    display:grid;
+    grid-template-columns:76px minmax(0,1fr);
+    grid-template-rows:auto auto 1fr;
+    column-gap:13px;
+    align-items:start;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .brand-home .bh-service picture{grid-column:1;grid-row:1/4;width:76px;height:76px}
+  .brand-home .bh-service picture img{width:100%;height:100%;aspect-ratio:1;object-fit:cover}
+  .brand-home .bh-service-meta{grid-column:2;grid-row:1;font-size:8px;line-height:1.3;letter-spacing:.06em;margin:0 0 3px}
+  .brand-home .bh-service h3{grid-column:2;grid-row:2;font-size:17px;line-height:1.18;letter-spacing:-.02em;margin:0 0 3px;white-space:normal}
+  .brand-home .bh-service p{grid-column:2;grid-row:3;font-size:12px;line-height:1.4;margin:0}
+  .brand-home .bh-service:nth-child(4) h3{font-size:17px}
+
+  /* A simple vertical sequence is easier to follow than a tight 2×2 process grid. */
+  .brand-home .bh-steps{grid-template-columns:minmax(0,1fr);gap:0}
+  .brand-home .bh-steps li{
+    display:grid;
+    grid-template-columns:34px minmax(0,1fr);
+    grid-template-rows:auto auto;
+    column-gap:10px;
+    padding:10px 0;
+    border-top:1px solid var(--line);
+  }
+  .brand-home .bh-steps li>span{grid-column:1;grid-row:1/3;margin:1px 0 0;font-size:11px}
+  .brand-home .bh-steps h3{grid-column:2;grid-row:1;font-size:19px;line-height:1.2;margin:0 0 2px}
+  .brand-home .bh-steps p{grid-column:2;grid-row:2;font-size:12px;line-height:1.4;margin:0}
+
+  .brand-home .bh-contact{padding-block:35px}
+  .brand-home .bh-contact h2{font-size:clamp(36px,10vw,42px);line-height:1.05}
+  .brand-home .bh-contact p:not(.eyebrow){font-size:14px;margin:13px 0}
+  .brand-home .bh-contact .button{min-height:48px}
+  .brand-home .bh-contact-links{gap:8px 16px}
+  .brand-home .bh-contact-links a{font-size:12px;min-height:40px}
+  .brand-home .testimonial-grid.is-carousel{grid-auto-columns:88%}
+  .brand-home .testimonial-card{padding:18px}
+}
+@media(max-width:390px){
+  .bh-hero-inner{gap:10px;padding-block:21px}
+  .bh-intro h1{font-size:clamp(40px,11.5vw,46px)}
+  .bh-actions{gap:8px}
+  .bh-actions .button{padding-inline:12px}
+  .bh-hero-copy>p{font-size:14px}
+  .brand-home .bh-service{grid-template-columns:68px minmax(0,1fr);column-gap:11px;padding:10px 0}
+  .brand-home .bh-service picture{width:68px;height:68px}
+  .brand-home .bh-service h3,.brand-home .bh-service:nth-child(4) h3{font-size:16px}
+  .brand-home .bh-service p{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+  .brand-home .brand-marquee-track{animation:none}
+}
