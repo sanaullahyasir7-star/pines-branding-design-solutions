@@ -27,7 +27,7 @@
 
 ## Maintenance and deployment
 - GitHub Pages uses `.github/workflows/pages.yml` to publish the explicit static site allowlist. No build server or API keys required.
-- `assets/brief.js` holds planner and enquiry behavior; number is 923244485746.
+- `assets/brief.js` holds planner and enquiry behavior; current routes are Aiden M. (+1 516 930 2942), Andy A. (+92 347 5801951), and Sanaullah Y. (+44 7311 102182).
 - Quotes live in `index.html`; `assets/testimonials.json` remains the owner-approved source record. Update both together if quotes change.
 - `tests/browser.html` contains the repeatable browser verification fixture. Serve the repository using `python -m http.server 8000`, then open `/tests/browser.html`. Tests are excluded from Pages deployment.
 - User input is not persisted in local storage. It remains in the current page; downloading/copying provides a copy before navigating away.
