@@ -1,5 +1,39 @@
 # Pines website engineering handover — 7 October 2026
 
+# Pines website engineering handover — rolling log
+
+> Current verified state: 13 October 2026. The historical entries below are retained for context; this section supersedes older location, contact, deployment and brand-assignment notes.
+
+## Deep audit and live release — 13 October 2026
+
+### Repairs released
+- Corrected Sanaullah Y.’s Project Planner and WhatsApp route to +44 7311 102182; the outdated Pakistan number is no longer used for this representative.
+- Added Vero Coffee & Gelato to the homepage brand-name strip and kept Refuel & Go out of the strip.
+- Grouped the supplied black Hummus Grill cap photos in Hummus Grill’s own Selected Work section.
+- Grouped clearly branded Family’s Homemade product images under that brand and removed the unsupported separate Balkan Homemade client section. The Balkan product description remains attached to the package imagery.
+- Kept Nescafé in its own section, separate from Peri-Peri Guys, and grouped “Grab & Go” packaging under Ovali Pizza.
+- Kept Pineapple Sol’s supplied address and website link.
+- Confirmed all six digital-service thumbnails load on the live Services page. These are service illustrations, not customer project evidence.
+- Kept three regional contact routes, contact email links, and the no-send-until-visitor-presses-Send WhatsApp flow.
+
+### Checks completed
+- GitHub Pages run #185 for commit `97ff10738e34b96f92723a7b0944e0c43e5ac821` completed successfully.
+- Opened all nine pages listed in the live sitemap. Each page loaded with one H1, a unique title and description, a canonical matching the .com page, and no broken images in the browser check.
+- Checked the live homepage brand strip and work sections, including Family Homemade, Hummus Grill, Peri-Peri Guys, Ovali Pizza, Cluckin’, Nescafé and Vero Coffee & Gelato.
+- Verified Project Planner regional WhatsApp URLs and message preparation without sending a test enquiry.
+- Checked all six digital thumbnails visually and confirmed each image decoded at 960px intrinsic width.
+- Checked the sitemap and robots.txt point to the live .com domain.
+- Browser regression records for earlier responsive revisions are retained below. This latest pass did not rerun the complete viewport matrix, Lighthouse, Search Console, physical-device testing or a screen-reader audit. No score or compliance certification is claimed.
+
+### Current limitations and owner follow-up
+- This audit browser was not signed in to Gmail. Clicking an email link navigated to Google’s Gmail page, which redirected to the Gmail landing/sign-in page instead of a compose screen. The authenticated compose flow could not be verified here. A mailto fallback remains when JavaScript is disabled.
+- Confirm that each listed Digital Branding service is offered and confirm its scope and deliverables before making specific promises.
+- Confirm product specifications, materials, print methods and finishes, minimum quantities, pricing, timing, shipping terms and business hours before adding those claims.
+- Verify the domain in Google Search Console and submit the sitemap.
+- The custom domain is live; prior notes saying the domain or DNS was pending are superseded.
+
+> Historical handover notes begin below.
+
 ## Changes
 - Preserved brand palette, logo, typography and existing page structure.
 - Removed decorative gradients only from portfolio photo surfaces. Four consistently proportioned, uncropped images link to their original full-size files; no modal to trap keyboard focus.
@@ -37,8 +71,8 @@
 - Approved completed-project photos, briefs, Pines contributions and exact materials/finishes for genuine case studies.
 - Product catalogue, available materials and print methods, minimum quantities, production limits, specific destination arrangements, timing and quote policies.
 - Evidence for any sourcing, recycling, sustainability or certification statements.
-- Business email, opening hours and approved social links if they should be published.
-- Final custom domain and associated DNS settings when purchased.
+- Opening hours and approved social links if they should be published.
+- Google Search Console verification and sitemap submission; the custom domain is live.
 
 ## Future improvements
 1. Publish approved case studies with original photography.
