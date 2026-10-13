@@ -407,59 +407,77 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 @media(prefers-reduced-motion:reduce){.services-page .service-card-image img,.services-page .digital-card{transition:none}.services-page .service-card-image:hover img,.services-page .service-card-image:focus-visible img,.services-page .digital-card:hover,.services-page .digital-card:focus-within{transform:none}}
 
 
-/* Services page mobile layout: clear left alignment, natural wrapping, shorter visual blocks. */
+/* Services page: compact phone catalogue; keep details available on demand. */
 @media(max-width:699px){
-  .services-page :is(h1,h2,h3){word-break:normal;overflow-wrap:normal;text-wrap:balance}
-  .services-page .services-hero{padding:34px 0 30px}
-  .services-page .services-hero-inner{gap:13px}
-  .services-page .services-hero h1{font-size:clamp(42px,11.8vw,58px);line-height:1.02}
+  .services-page :is(h1,h2,h3){word-break:normal;overflow-wrap:anywhere;text-wrap:pretty}
+  .services-page .services-hero{padding:36px 0 30px}
+  .services-page .services-hero-inner,.services-page .services-wrap{width:calc(100% - 36px)}
+  .services-page .services-hero-inner{grid-template-columns:minmax(0,1fr);gap:16px}
+  .services-page .services-hero h1{font-size:clamp(43px,11.8vw,58px);line-height:1.02}
   .services-page .services-hero-intro>p{max-width:38ch;font-size:16px;line-height:1.55}
   .services-page .services-hero .button{width:auto;min-width:168px;min-height:48px;margin-top:14px}
-  .services-page .services-jump-links{justify-content:flex-start;gap:4px 16px;margin-top:8px}
-  .services-page .services-section-head{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;justify-items:start;gap:8px;margin-bottom:18px;text-align:left}
+  .services-page .services-jump-links{justify-content:flex-start;gap:4px 16px;margin-top:10px}
+  .services-page .services-section-head{grid-template-columns:minmax(0,1fr);align-items:start;justify-items:start;gap:9px;margin-bottom:20px;text-align:left}
   .services-page .services-section-head>div,.services-page .services-section-head>p{width:100%;max-width:42ch;text-align:left}
-  .services-page .services-section-head .eyebrow{font-size:10px;line-height:1.4;letter-spacing:.11em}
-  .services-page .services-section-head h2{max-width:18ch;font-size:clamp(33px,9vw,40px);line-height:1.08;margin-top:7px}
-  .services-page .services-section-head>p{font-size:15px;line-height:1.55;margin:0}
-  .services-page .services-physical,.services-page .services-digital{padding-block:38px;scroll-margin-top:82px}
-  .services-page .service-catalog-grid{grid-template-columns:minmax(0,1fr);gap:14px}
-  .services-page .service-card,.services-page .service-card--4,.services-page .service-card--5{grid-column:1;min-width:0}
-  .services-page .service-card-image{aspect-ratio:2.05/1}
-  .services-page .service-card-image-cue{right:8px;bottom:8px;padding:6px 8px;font-size:10px}
-  .services-page .service-card-content{padding:15px 16px 13px}
-  .services-page .service-number{font-size:9px;line-height:1.45;letter-spacing:.08em;overflow-wrap:anywhere}
-  .services-page .service-card h3{font-size:23px;line-height:1.16;margin:8px 0 6px}
-  .services-page .service-card-summary,.services-page .digital-card-summary{font-size:14px;line-height:1.52;max-width:48ch}
-  .services-page .service-more{margin-top:9px}
-  .services-page .service-more summary{min-height:42px;font-size:13px}
-  .services-page .service-more>div{font-size:14px;line-height:1.55;padding-bottom:6px}
-  .services-page .service-more p{margin-bottom:8px}
-  .services-page .service-action{min-height:42px;padding-top:8px;font-size:13px}
+  .services-page .services-section-head .eyebrow{font-size:10px;line-height:1.4;letter-spacing:.1em}
+  .services-page .services-section-head h2{max-width:19ch;font-size:clamp(33px,9vw,40px);line-height:1.08;margin-top:7px}
+  .services-page .services-section-head>p{font-size:15px;line-height:1.5;margin:0}
+  .services-page .services-physical,.services-page .services-digital{padding-block:36px;scroll-margin-top:82px}
+  .services-page .service-catalog-grid,.services-page .digital-service-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+  .services-page .service-card,.services-page .service-card--4,.services-page .service-card--5,
+  .services-page .digital-card{
+    display:grid;grid-template-columns:minmax(96px,31%) minmax(0,1fr);
+    grid-template-rows:minmax(132px,auto);grid-column:1;min-width:0;align-items:stretch
+  }
+  .services-page .service-card-image,.services-page .digital-visual{
+    grid-column:1;grid-row:1;display:block;width:100%;height:100%;min-height:132px;
+    aspect-ratio:auto;overflow:hidden;padding:0
+  }
+  .services-page .service-card-image picture,.services-page .service-card-image img,
+  .services-page .digital-visual img{display:block;width:100%;height:100%;min-height:132px;object-fit:cover}
+  .services-page .service-card-image{border-right:1px solid var(--line)}
+  .services-page .service-card-image-cue,.services-page .service-number{display:none}
+  .services-page .service-card-content,.services-page .digital-card-content{
+    grid-column:2;grid-row:1;display:flex;flex-direction:column;min-width:0;padding:13px 13px 11px
+  }
+  .services-page .service-card h3,.services-page .digital-card h3{
+    min-height:0;margin:0 0 6px;font-size:21px;line-height:1.08;letter-spacing:-.015em
+  }
+  .services-page .service-card-summary,.services-page .digital-card-summary{
+    min-height:0;margin:0;font-size:13px;line-height:1.43
+  }
+  .services-page .service-more,.services-page .digital-card .service-more{margin-top:7px}
+  .services-page .service-more summary{
+    min-height:36px;font-size:12px;line-height:1.2
+  }
+  .services-page .service-more>div{font-size:13px;line-height:1.5;padding:0 0 5px}
+  .services-page .service-more p{margin:0 0 8px}
+  .services-page .service-action{
+    min-height:34px;margin-top:auto;padding-top:6px;font-size:12px;line-height:1.2
+  }
   .services-page .services-transition{padding:28px 18px}
   .services-page .services-transition-inner{width:100%;max-width:38ch}
   .services-page .services-transition h2{font-size:clamp(34px,9vw,40px);line-height:1.08}
-  .services-page .services-transition-inner>p:not(.eyebrow){font-size:14px;line-height:1.55;margin:10px 0 6px}
-  .services-page .services-digital{padding-block:38px}
-  .services-page .digital-service-grid{grid-template-columns:minmax(0,1fr);gap:14px}
-  .services-page .digital-visual{aspect-ratio:2.2/1}
-  .services-page .digital-card-content{padding:15px 16px 13px}
-  .services-page .digital-card h3{font-size:22px;line-height:1.16;min-height:0;margin:8px 0 6px}
-  .services-page .digital-card-summary{min-height:0}
-  .services-page .digital-card .service-more{margin-top:9px}
+  .services-page .services-transition-inner>p:not(.eyebrow){font-size:14px;line-height:1.5;margin:9px 0 5px}
+  .services-page .transition-mark{display:none}
   .services-page .services-next-step{padding:38px 0}
   .services-page .services-next-grid{grid-template-columns:minmax(0,1fr);gap:18px}
   .services-page .services-next-step h2{font-size:clamp(34px,9vw,40px);line-height:1.08}
-  .services-page .services-next-step .services-next-grid>div>p{font-size:15px;line-height:1.55}
+  .services-page .services-next-step .services-next-grid>div>p{font-size:15px;line-height:1.5}
   .services-page .services-next-grid .button{width:auto;min-width:170px;min-height:48px;justify-content:center}
   .services-page .services-brief-list li{grid-template-columns:36px minmax(0,1fr);gap:8px;padding:11px 0}
-  .services-page .services-brief-list p{font-size:15px;line-height:1.45}
+  .services-page .services-brief-list p{font-size:15px;line-height:1.4}
 }
 @media(max-width:360px){
-  .services-page .services-wrap,.services-page .services-hero-inner{width:calc(100% - 28px)}
+  .services-page .services-hero-inner,.services-page .services-wrap{width:calc(100% - 28px)}
   .services-page .services-hero h1{font-size:42px}
-  .services-page .service-card-content,.services-page .digital-card-content{padding-inline:14px}
-  .services-page .service-card h3{font-size:21px}
+  .services-page .service-card,.services-page .digital-card{grid-template-columns:92px minmax(0,1fr)}
+  .services-page .service-card-content,.services-page .digital-card-content{padding:11px 11px 9px}
+  .services-page .service-card h3,.services-page .digital-card h3{font-size:19px}
+  .services-page .service-card-summary,.services-page .digital-card-summary{font-size:12.5px}
 }
 @media(prefers-reduced-motion:reduce){
   .services-page .service-card-image img,.services-page .digital-card{transition:none}
+  .services-page .service-card-image:hover img,.services-page .service-card-image:focus-visible img,
+  .services-page .digital-card:hover,.services-page .digital-card:focus-within{transform:none}
 }
