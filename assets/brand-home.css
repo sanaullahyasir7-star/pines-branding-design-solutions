@@ -372,3 +372,61 @@
 @media(prefers-reduced-motion:reduce){
   .brand-home .brand-marquee-track{animation:none}
 }
+
+
+/* Mobile typography correction: use readable sizes and natural, balanced wrapping. */
+@media(max-width:760px){
+  .brand-home main h1,
+  .brand-home main h2,
+  .brand-home main h3{word-break:normal;overflow-wrap:normal;text-wrap:balance}
+  .brand-home .bh-service{
+    grid-template-columns:clamp(72px,23vw,86px) minmax(0,1fr);
+    column-gap:14px;
+    padding-block:13px;
+  }
+  .brand-home .bh-service picture{
+    width:clamp(72px,23vw,86px);
+    height:clamp(72px,23vw,86px);
+  }
+  .brand-home .bh-service-meta{
+    font-size:9px;
+    line-height:1.4;
+    letter-spacing:.07em;
+    margin-bottom:4px;
+    overflow-wrap:anywhere;
+  }
+  .brand-home .bh-service h3,
+  .brand-home .bh-service:nth-child(4) h3{
+    font-size:18px;
+    line-height:1.22;
+    margin-bottom:4px;
+  }
+  .brand-home .bh-service p{
+    font-size:13px;
+    line-height:1.5;
+    max-width:34ch;
+  }
+  .brand-home .bh-work-card-title{
+    font-size:12px;
+    line-height:1.4;
+    overflow-wrap:anywhere;
+  }
+  .brand-home .bh-work-intro{font-size:14px;line-height:1.55}
+  .brand-home .bh-steps h3{font-size:20px}
+  .brand-home .bh-steps p{font-size:13px;line-height:1.5}
+}
+@media(max-width:390px){
+  .brand-home .bh-service{grid-template-columns:72px minmax(0,1fr);column-gap:12px}
+  .brand-home .bh-service picture{width:72px;height:72px}
+  .brand-home .bh-service h3,
+  .brand-home .bh-service:nth-child(4) h3{font-size:17px}
+  .brand-home .bh-service p{font-size:12px}
+}
+@media(max-width:340px){
+  .bh-actions{gap:6px}
+  .bh-actions .button{font-size:12px}
+  .brand-home .bh-service{grid-template-columns:66px minmax(0,1fr);column-gap:10px}
+  .brand-home .bh-service picture{width:66px;height:66px}
+  .brand-home .bh-service h3,
+  .brand-home .bh-service:nth-child(4) h3{font-size:16px}
+}
