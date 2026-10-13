@@ -494,3 +494,54 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 
 /* Reserve brand-mark geometry before logo files finish loading. */
 .brand img,.footer-logo{aspect-ratio:874/317}
+
+
+/* Mobile service thumbnails: use the artwork's landscape ratio to avoid tight crops. */
+@media(max-width:699px){
+  .services-page .service-card,
+  .services-page .service-card--4,
+  .services-page .service-card--5{
+    display:flex;
+    flex-direction:column;
+    grid-template-columns:none;
+    grid-template-rows:none;
+  }
+  .services-page .service-card-image{
+    position:relative;
+    display:block;
+    width:100%;
+    height:auto;
+    min-height:0;
+    aspect-ratio:4 / 3;
+    grid-column:auto;
+    grid-row:auto;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  .services-page .service-card-image picture{
+    position:absolute;
+    inset:0;
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  .services-page .service-card-image img{
+    position:absolute;
+    inset:0;
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:0;
+    object-fit:contain;
+    object-position:center;
+  }
+  .services-page .service-card-content{
+    display:flex;
+    flex:1;
+    min-width:0;
+    padding:18px 18px 16px;
+  }
+  .services-page .service-number{display:block;font-size:10px;line-height:1.35}
+  .services-page .service-card h3{font-size:25px;line-height:1.12;margin:8px 0}
+  .services-page .service-card-summary{font-size:15px;line-height:1.55}
+}
