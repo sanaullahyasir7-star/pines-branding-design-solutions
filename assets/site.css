@@ -481,3 +481,10 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
   .services-page .service-card-image:hover img,.services-page .service-card-image:focus-visible img,
   .services-page .digital-card:hover,.services-page .digital-card:focus-within{transform:none}
 }
+
+/* Reserve each mobile service thumbnail box before its image loads. */
+@media(max-width:699px){
+  .services-page .service-card-image,.services-page .digital-visual{position:relative;min-height:132px}
+  .services-page .service-card-image picture,.services-page .service-card-image img,
+  .services-page .digital-visual img{position:absolute;inset:0;width:100%;height:100%;min-height:0}
+}
