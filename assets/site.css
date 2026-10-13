@@ -351,7 +351,7 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 .services-page .service-card{grid-column:span 4;min-width:0;display:flex;flex-direction:column;border:1px solid var(--line);background:var(--paper)}
 .services-page .service-card--4{grid-column:3/span 4}
 .services-page .service-card--5{grid-column:7/span 4}
-.services-page .service-card-image{position:relative;display:block;overflow:hidden;aspect-ratio:4/2.65;background:var(--sage)}
+.services-page .service-card-image{position:relative;display:block;overflow:hidden;aspect-ratio:16/10;background:var(--sage)}
 .services-page .service-card-image picture,.services-page .service-card-image img{width:100%;height:100%}
 .services-page .service-card-image img{object-fit:cover;transition:transform 300ms ease}
 .services-page .service-card-image:hover img,.services-page .service-card-image:focus-visible img{transform:scale(1.025)}
@@ -488,3 +488,6 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
   .services-page .service-card-image picture,.services-page .service-card-image img,
   .services-page .digital-visual img{position:absolute;inset:0;width:100%;height:100%;min-height:0}
 }
+
+/* Keep service brief numerals readable on light surfaces. */
+.services-page .services-brief-list li>span{color:var(--dark-olive)}
