@@ -1,4 +1,4 @@
-# Pines launch checklist — current as of 13 October 2026
+# Pines launch checklist — current as of 14 October 2026
 
 ## Verified website information
 
@@ -25,10 +25,11 @@
 ## Search and launch status
 
 - [x] Page titles, descriptions, canonical URLs, Open Graph/Twitter metadata, sitemap and robots.txt use the live .com domain.
-- [x] The live site opens at https://pinesbrandingdesignsolutions.com/.
-- [ ] Verify the domain in Google Search Console and submit the sitemap.
-- [ ] Run Lighthouse on the deployed site; no current score is claimed.
-- [ ] Review with physical Android and iOS devices and screen readers.
+- [x] Homepage image candidates use responsive sources; all homepage images loaded in the final desktop browser check with no horizontal overflow.
+- [x] The updated responsive homepage assets are live at https://pinesbrandingdesignsolutions.com/.
+- [x] PageSpeed Insights completed on the preceding image-optimization commit: mobile 89, Accessibility 100, Best Practices 100, SEO 100; FCP 2.6s, LCP 2.9s, TBT 0ms, CLS 0.00, Speed Index 4.4s. A final run after the last responsive-source update remained in Google's loading state, so repeat the measurement before quoting it as the current build score.
+- [ ] Verify the domain in Google Search Console and submit the sitemap. This requires a signed-in owner account and DNS verification access.
+- [ ] Review on physical Android and iOS devices and with a screen reader.
 
 ## Business details to confirm before adding specific claims
 
