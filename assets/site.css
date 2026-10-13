@@ -328,7 +328,7 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 .footer-grid>div:first-child>a.text-arrow[data-route="start-project/"]{display:inline-flex;min-height:48px;align-items:center;justify-content:center;margin-top:1.5rem;padding:0 20px;border:1px solid #efeee5;border-radius:2px;background:#efeee5;color:#023d25!important;font-size:15px;font-weight:600;line-height:1.2;text-decoration:none;transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease}
 .footer-grid>div:first-child>a.text-arrow[data-route="start-project/"]:hover{border-color:#e3e3d6;background:#e3e3d6}
 .footer-grid>div:first-child>a.text-arrow[data-route="start-project/"]:focus-visible{outline:3px solid #efeee5;outline-offset:4px}
-.contact-page .contact-email>a{min-width:0;white-space:nowrap;overflow-wrap:normal;letter-spacing:-.025em;font-size:clamp(10px,1vw,14px)}
+.contact-page .contact-email>a{min-width:0;white-space:nowrap;overflow-wrap:normal;letter-spacing:-.025em;font-size:clamp(12px,1vw,14px)}
 
 
 /* Services page art direction — scoped to the Services page. */

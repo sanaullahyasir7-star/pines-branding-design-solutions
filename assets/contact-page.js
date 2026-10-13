@@ -3,6 +3,9 @@
 document.documentElement.classList.add('js');
 const page=document.querySelector('.contact-page');if(!page)return;
 const live=page.querySelector('[data-copy-status]'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Keep the mailto fallback for no-JavaScript users. With JavaScript enabled,
+// open Gmail's compose view in this tab so Chrome does not leave a blank tab.
+page.querySelectorAll('[data-gmail-compose][href^="mailto:"]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const address=link.getAttribute('href').slice(7).split('?')[0];const compose=new URL('https://mail.google.com/mail/');compose.searchParams.set('view','cm');compose.searchParams.set('fs','1');compose.searchParams.set('to',address);window.location.assign(compose.toString())}));
 let timer;
 const fallback=value=>{const field=document.createElement('textarea');field.value=value;field.setAttribute('readonly','');field.style.cssText='position:fixed;opacity:0';document.body.append(field);field.select();let ok=false;try{ok=document.execCommand('copy')}catch(_){}field.remove();return ok};
 const copy=async value=>{try{if(navigator.clipboard&&isSecureContext){await navigator.clipboard.writeText(value);return true}}catch(_){}return fallback(value)};
