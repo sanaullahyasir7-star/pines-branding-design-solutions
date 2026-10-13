@@ -19,7 +19,7 @@
 - [x] The visitor must press Send in WhatsApp for Pines to receive an enquiry.
 - [x] The prepared message is included in the WhatsApp destination URL.
 - [x] Regional phone routes are checked without sending a message.
-- [x] Contact email links open Gmail compose in the same tab when JavaScript is enabled and retain a mailto fallback when JavaScript is unavailable.
+- [x] With JavaScript enabled, contact email links navigate to Gmail’s same-tab compose URL; with JavaScript disabled they keep a mailto fallback. This browser had no signed-in Gmail account, so the compose screen could not be verified here.
 - [x] Copy and download actions are available on the project form.
 
 ## Search and launch status
@@ -40,4 +40,4 @@ Do not publish these as facts until Pines confirms them:
 - [ ] Delivery terms, shipping costs, service exclusions and customs responsibility.
 - [ ] Business hours, escalation contact, terms of sale, cancellation/payment terms.
 - [ ] Enquiry data retention policy and any additional legal wording the owner requires.
-- [ ] Detailed deliverables for each Digital Branding service if Pines wants copy beyond the current service names.
+- [ ] Confirm that every listed Digital Branding service is offered and confirm its scope and deliverables before making specific promises.
