@@ -545,3 +545,13 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
   .services-page .service-card h3{font-size:25px;line-height:1.12;margin:8px 0}
   .services-page .service-card-summary{font-size:15px;line-height:1.55}
 }
+
+
+/* Regional email links in the shared footer and project planner. */
+.footer-email-links{display:grid;gap:7px;margin:10px 0 14px}
+.footer-email-links a{display:block;max-width:100%;color:var(--cream);font-size:13px;line-height:1.5;overflow-wrap:anywhere;text-decoration:underline;text-decoration-color:rgba(239,238,229,.55);text-underline-offset:3px}
+.footer-email-links a:hover{text-decoration-color:var(--cream)}
+.planner-recipient-email{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+.planner-recipient-email a{color:var(--pine);font-weight:600;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.planner-recipient-email a:focus-visible{outline:3px solid var(--olive);outline-offset:3px}
+@media(max-width:760px){.footer-email-links{gap:8px}.footer-email-links a{font-size:13px}}
