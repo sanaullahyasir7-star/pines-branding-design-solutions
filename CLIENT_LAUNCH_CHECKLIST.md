@@ -1,4 +1,4 @@
-# Pines launch checklist — current as of 14 October 2026
+# Pines launch checklist — current as of 26 October 2026
 
 ## Verified website information
 
@@ -7,7 +7,7 @@
 - [x] Delivery wording: Worldwide delivery.
 - [x] Services shown: Packaging; Print & Paper; Branding & Design; Digital Branding; Mockups, Sampling & Production.
 - [x] Regional contact names, numbers, WhatsApp links and email addresses match the current Contact page.
-- [x] Digital service thumbnails are included on the Services page.
+- [x] The Services page shows one illustration per service, including Digital Branding. The six detailed digital-service thumbnails (AI chatbot, SEO foundations, website design, social visuals, automation workflows, custom web tool) are not shown on the page and are kept in the repository only until the owner confirms those services.
 - [x] Supplied client names and media are shown in brand-specific Selected Work sections. Family’s Homemade product photos are grouped under Family’s Homemade; “Balkan Homemade” appears on the package, not as a separate client section.
 - [x] Pineapple Sol appears in the brand list and has its provided location and website link.
 - [x] Nescafé and Vero Coffee & Gelato are represented; Refuel & Go is not listed as a separate brand.
@@ -30,6 +30,12 @@
 - [x] Final PageSpeed Insights mobile run: 92 performance, Accessibility 100, Best Practices 100, SEO 100; FCP 2.6s, LCP 2.7s, TBT 0ms, CLS 0.00, Speed Index 2.8s. Captured on 14 Oct 2026 with Lighthouse 13.5.0, Moto G Power emulation and slow 4G. [View the report](https://pagespeed.web.dev/analysis/https-pinesbrandingdesignsolutions-com/ioc3mb00yo?form_factor=mobile).
 - [ ] Verify the domain in Google Search Console and submit the sitemap. This requires a signed-in owner account and DNS verification access.
 - [ ] Review on physical Android and iOS devices and with a screen reader.
+
+## Owner confirmations raised by the 26 October 2026 audit
+
+- [ ] Confirm that the four homepage testimonials (Kaafi Roast Coffee, Northbound Apparel, Threadhouse Bakery, Bright Leaf Organics) come from real clients who agreed to be quoted. None of these companies appears in the brand list or Selected Work, so the written permission should be on file before the site keeps presenting them as client words.
+- [ ] Decide whether email links should keep opening Gmail's compose screen. Visitors who use Outlook, Apple Mail or another provider are sent to Gmail instead; a plain mailto link works for everyone.
+- [ ] Add captions or a transcript if the project videos ever gain an audio track. The current two videos have none.
 
 ## Business details to confirm before adding specific claims
 

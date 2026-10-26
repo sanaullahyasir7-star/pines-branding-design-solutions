@@ -2,7 +2,30 @@
 
 # Pines website engineering handover — rolling log
 
-> Current verified state: 14 October 2026. This entry supersedes the 13 October summary and older historical notes where they conflict.
+> Current verified state: 26 October 2026. This entry and the 14 October entry supersede the 13 October summary and older historical notes where they conflict.
+
+## Code audit and fixes — 26 October 2026
+
+### Fixed
+- 404 page: switched stylesheet, script, logo, favicon and navigation links to root-absolute paths. GitHub Pages serves 404.html at the missing URL, so the old relative paths broke the styling and links on any deep missing URL such as /a/b/c.
+- Footer copyright year: the year was filled in only by JavaScript, so it was blank without it. A static 2026 now sits in the markup and the script still updates it.
+- Name typo: "Andy A ." is now "Andy A." on the Contact page, Project Planner, structured data, brief.js and the test harness.
+- Cache tokens: site.css, site.js and brief.js now use one version token on every page. Before, two different tokens for the same file made browsers download it again when moving between pages.
+- Project Planner currency now lists USD first, so a New York business no longer defaults to PKR. PKR is still available.
+- Social metadata: added og:site_name, og:locale, og:image:width/height/alt and twitter:image:alt on every page.
+- Launch checklist: corrected the claim that six digital-service thumbnails appear on the Services page. They are not referenced anywhere on the site.
+
+### Checked with no problems found
+- All ten pages parse without HTML errors, have one H1, unique titles and descriptions, and canonical URLs on the .com domain.
+- No broken internal links, anchors or image references; every image has alt text and explicit dimensions; every external link opened in a new tab has rel="noopener".
+- Both project videos have posters, preload="none" and no audio track.
+
+### Left for the owner (see CLIENT_LAUNCH_CHECKLIST.md)
+- Confirm the homepage testimonials are real, consented client quotes.
+- Decide whether email links should keep forcing Gmail compose.
+- Roughly 1.4 MB of original images (pine-branch-top.webp, pine-branch-bottom.webp, packaging-concept.webp, four pines-*.webp covers, the digital thumbnails, three Ovali Pizza photos) are published but unused. They were deliberately kept as masters, so they were not removed.
+- Google fonts still block rendering (reported at about 1.75 s on mobile). Self-hosting the two font families would remove that; it needs the font files and was not possible from this environment.
+- Search Console verification and sitemap submission are still outstanding.
 
 ## Responsive image and performance pass — 14 October 2026
 
