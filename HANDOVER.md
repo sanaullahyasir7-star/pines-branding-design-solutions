@@ -20,12 +20,18 @@
 - No broken internal links, anchors or image references; every image has alt text and explicit dimensions; every external link opened in a new tab has rel="noopener".
 - Both project videos have posters, preload="none" and no audio track.
 
+### Second pass, same day: remaining fixes and motion
+- Email links are now plain mailto links everywhere (Contact page and Project Planner). The Gmail-forcing script was removed and the privacy notice updated.
+- Fonts are self-hosted from assets/fonts (DM Sans 400–700, Zilla Slab 400–600 plus italic 400/500, SIL OFL 1.1). The Google Fonts stylesheet and preconnects were removed, which clears the render-blocking font request and the Google privacy disclosure. The two above-the-fold fonts are preloaded.
+- Removed 17 unreferenced files (about 1.4 MB): original pine-branch images, four old service covers, packaging-concept, the digital-service thumbnails, an unused SVG and three unused Ovali Pizza photos. They remain in git history.
+- Mobile layout-shift bug: the nav menu was fully expanded until the deferred site.js added the js class, so cold loads could paint a roughly 200 px open menu and then jump (CLS about 0.22 in 6 of 18 test loads, also on the version published before this change). A one-line inline script in the head now sets nav-js before first paint, and the script tag removes it again if site.js fails to load, so the menu always stays usable. After the fix: CLS 0 in 18 of 18 test loads.
+- Motion layer (end of assets/site.css and assets/site.js): hero entrance, staggered scroll reveals for content below the first screen, hover lift on cards, slow pine-branch sway, FAQ and service panels easing open, page-to-page crossfade where supported, a reading-progress bar and a header shadow on scroll. All of it sits inside prefers-reduced-motion: no-preference or is skipped by script, so visitors who ask for less motion get the static design. Only content below the first screen is ever hidden, so nothing flashes on load, and a focus handler reveals anything a keyboard user tabs into.
+- Verified in headless Chromium at 1440 px and 390 px on all ten pages, with and without reduced motion: no console errors, no horizontal overflow, no content left hidden after scrolling, layout shift under 0.02.
+
 ### Left for the owner (see CLIENT_LAUNCH_CHECKLIST.md)
 - Confirm the homepage testimonials are real, consented client quotes.
-- Decide whether email links should keep forcing Gmail compose.
-- Roughly 1.4 MB of original images (pine-branch-top.webp, pine-branch-bottom.webp, packaging-concept.webp, four pines-*.webp covers, the digital thumbnails, three Ovali Pizza photos) are published but unused. They were deliberately kept as masters, so they were not removed.
-- Google fonts still block rendering (reported at about 1.75 s on mobile). Self-hosting the two font families would remove that; it needs the font files and was not possible from this environment.
 - Search Console verification and sitemap submission are still outstanding.
+- Physical iOS and Android devices and a screen-reader pass have not been done.
 
 ## Responsive image and performance pass — 14 October 2026
 

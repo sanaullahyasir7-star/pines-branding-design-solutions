@@ -99,7 +99,7 @@
       ['Budget',p.budget ? p.budget + ' ' + p.currency : 'To discuss']
     ]);
     summary.textContent = planText; planLink.href = whatsapp(planText,p.region);
-    if (planRegionEmail) { const email = repEmails[p.region] || repEmails['us-gb-ie']; planRegionEmail.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`; planRegionEmail.textContent = email; }
+    if (planRegionEmail) { const email = repEmails[p.region] || repEmails['us-gb-ie']; planRegionEmail.href = `mailto:${email}`; planRegionEmail.textContent = email; }
   };
   fields.forEach(el => { el.addEventListener('input', update); el.addEventListener('change', update); }); update();
   document.querySelector('[data-plan-copy]').addEventListener('click', () => copy(planText, planFeedback));

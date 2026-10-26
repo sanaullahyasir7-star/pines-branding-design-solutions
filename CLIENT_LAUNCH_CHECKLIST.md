@@ -19,7 +19,7 @@
 - [x] The visitor must press Send in WhatsApp for Pines to receive an enquiry.
 - [x] The prepared message is included in the WhatsApp destination URL.
 - [x] Regional phone routes are checked without sending a message.
-- [x] With JavaScript enabled, contact email links navigate to Gmail’s same-tab compose URL; with JavaScript disabled they keep a mailto fallback. This browser had no signed-in Gmail account, so the compose screen could not be verified here.
+- [x] Contact email links are plain mailto links that work with any email app.
 - [x] Copy and download actions are available on the project form.
 
 ## Search and launch status
@@ -34,7 +34,6 @@
 ## Owner confirmations raised by the 26 October 2026 audit
 
 - [ ] Confirm that the four homepage testimonials (Kaafi Roast Coffee, Northbound Apparel, Threadhouse Bakery, Bright Leaf Organics) come from real clients who agreed to be quoted. None of these companies appears in the brand list or Selected Work, so the written permission should be on file before the site keeps presenting them as client words.
-- [ ] Decide whether email links should keep opening Gmail's compose screen. Visitors who use Outlook, Apple Mail or another provider are sent to Gmail instead; a plain mailto link works for everyone.
 - [ ] Add captions or a transcript if the project videos ever gain an audio track. The current two videos have none.
 
 ## Business details to confirm before adding specific claims

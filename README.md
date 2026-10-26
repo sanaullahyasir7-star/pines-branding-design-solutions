@@ -18,7 +18,7 @@ A responsive static multi-page website for Pines, published through GitHub Pages
 
 ## Contact and enquiry flow
 
-The Contact page lists regional representatives and their current phone, WhatsApp and email details. Email links keep a mailto fallback; when JavaScript is enabled, they open a Gmail compose view in the same tab with the published Pines email prefilled. The website does not send an email.
+The Contact page lists regional representatives and their current phone, WhatsApp and email details. Email links are plain mailto links that open the visitor’s own email app with the published Pines address prefilled. The website does not send an email.
 
 The Project Planner and enquiry form prepare a WhatsApp message for the selected regional representative. The visitor reviews it and presses Send in WhatsApp for Pines to receive it. The prepared brief is included in the WhatsApp destination URL. The website does not store enquiry details or provide a server-side form endpoint.
 
@@ -30,9 +30,10 @@ The .github/workflows/pages.yml workflow publishes the allowlisted static site w
 
 - index.html — homepage
 - services/, work/, process/, about/, faq/, start-project/, contact/ — public sections
-- assets/site.css, assets/site.js — shared visual system and interactions
+- assets/site.css, assets/site.js — shared visual system, fonts and interactions, including the motion layer (hero entrance, scroll reveals, hover polish, progress bar). Motion switches itself off for visitors who prefer reduced motion.
+- assets/fonts/ — self-hosted DM Sans and Zilla Slab (SIL Open Font License); no requests go to Google Fonts
 - assets/brief.js — project planner, WhatsApp message, copy and download behavior
-- assets/contact-page.js — contact-page behavior, copy actions and Gmail compose enhancement
+- assets/contact-page.js — contact-page behavior and copy actions
 - assets/testimonials.json — testimonial source record
 - tests/browser.html, tests/brand-home.html — responsive and browser regression harnesses
 - CLIENT_LAUNCH_CHECKLIST.md — remaining owner confirmations
