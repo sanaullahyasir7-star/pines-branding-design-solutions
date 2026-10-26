@@ -28,6 +28,14 @@
 - Motion layer (end of assets/site.css and assets/site.js): hero entrance, staggered scroll reveals for content below the first screen, hover lift on cards, slow pine-branch sway, FAQ and service panels easing open, page-to-page crossfade where supported, a reading-progress bar and a header shadow on scroll. All of it sits inside prefers-reduced-motion: no-preference or is skipped by script, so visitors who ask for less motion get the static design. Only content below the first screen is ever hidden, so nothing flashes on load, and a focus handler reveals anything a keyboard user tabs into.
 - Verified in headless Chromium at 1440 px and 390 px on all ten pages, with and without reduced motion: no console errors, no horizontal overflow, no content left hidden after scrolling, layout shift under 0.02.
 
+### Third pass, same day: signature motion
+- Page headlines (H1) are split into word spans in the HTML itself, so each word rises from behind a mask on load without needing JavaScript. Headings further down the page are split by site.js (class `w sw`) and rise as they scroll into view. The contact page headline keeps its own reveal, and the testimonials heading (SVG underline) is left alone.
+- Photos wipe upward like a curtain as they arrive (work cards, service cards, work-page galleries). Gallery pictures are clipped on the image, never on the observed figure, because a fully clipped element can never be detected as on screen.
+- Hero: slow scroll-driven parallax on the picture and branches (CSS scroll timelines, ignored by browsers without support), plus a gentle 3D tilt that follows the mouse on desktop. Main buttons move slightly toward the pointer. Home-page process steps draw a pine-green rule as they arrive.
+- Everything is inside prefers-reduced-motion: no-preference or skipped by script. Verified in headless Chromium on all ten pages at 1440 px and 390 px, with and without reduced motion: no console errors, no overflow, every headline word and image ends in its final position, mobile cold-load layout shift 0.
+- Fixed a nav label typo: the Work page said "Selected Work"; every other page says "Selected work".
+- Gotcha for future edits: scroll-split words must keep the `sw` class, otherwise the page-load word animation replays after the reveal finishes.
+
 ### Left for the owner (see CLIENT_LAUNCH_CHECKLIST.md)
 - Confirm the homepage testimonials are real, consented client quotes.
 - Search Console verification and sitemap submission are still outstanding.

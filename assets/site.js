@@ -40,9 +40,10 @@
   }
 })();
 
-/* Motion layer: scroll reveals, reading progress and header depth.
-   Progressive enhancement. It does nothing for visitors who prefer reduced motion,
-   and only content below the first screen is ever hidden, so nothing flashes on load. */
+/* Motion layer: reading progress, header depth, scroll reveals, headline masks, hero tilt
+   and magnetic buttons. Progressive enhancement: it does nothing for visitors who prefer
+   reduced motion, and only content below the first screen is ever hidden, so nothing
+   flashes on load. */
 (() => {
   'use strict';
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -62,11 +63,40 @@
   addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(frame); } }, { passive: true });
   addEventListener('resize', frame);
   frame();
+
+  // Pointer-only touches (desktop mice and trackpads).
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const hero = document.querySelector('.bh-hero');
+    const shot = hero && hero.querySelector('.bh-hero-visual');
+    if (shot) {
+      let tilting = false, tx = 0, ty = 0;
+      const paint = () => {
+        tilting = false;
+        shot.style.setProperty('--ry', (tx * 3).toFixed(2) + 'deg');
+        shot.style.setProperty('--rx', (-ty * 2.5).toFixed(2) + 'deg');
+      };
+      hero.addEventListener('pointermove', e => {
+        tx = Math.max(-1, Math.min(1, (e.clientX / window.innerWidth - 0.5) * 2));
+        ty = Math.max(-1, Math.min(1, (e.clientY / window.innerHeight - 0.5) * 2));
+        if (!tilting) { tilting = true; requestAnimationFrame(paint); }
+      });
+      hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; paint(); });
+    }
+    document.querySelectorAll('a.button, .site-header .cta').forEach(el => {
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (((e.clientX - r.left) / r.width - 0.5) * 8).toFixed(1) + 'px');
+        el.style.setProperty('--my', (((e.clientY - r.top) / r.height - 0.5) * 6).toFixed(1) + 'px');
+      });
+      el.addEventListener('pointerleave', () => { el.style.removeProperty('--mx'); el.style.removeProperty('--my'); });
+    });
+  }
+
   if (!('IntersectionObserver' in window)) return;
 
   const selectors = [
     '.bh-section-heading', '.bh-work-intro', '.bh-work-card', '.bh-service', '.bh-steps > *',
-    '.bh-contact-links', '.bh-location', '.bh-contained',
+    '.bh-contact .wrap > *', '.bh-location', '.bh-contained',
     '.section-heading', '.split > *', '.copy-block', '.form-panel', '.planner-summary',
     '.client-project-heading', '.client-project-gallery > *', '.client-project-subsection-heading',
     '.service-card', '.services-section-head', '.services-transition', '.services-next-step',
@@ -75,16 +105,50 @@
   const excluded = '.testimonials,[data-reveal],.marquee,.brand-marquee,.brand-strip,.prepared-brief,[hidden]';
   const all = [...new Set(document.querySelectorAll(selectors.join(',')))].filter(el => !el.closest(excluded));
   const below = window.innerHeight * 0.92;
-  const targets = all.filter(el => !all.some(o => o !== el && o.contains(el)) && el.getBoundingClientRect().top > below);
+  const nested = el => all.some(o => o !== el && o.contains(el));
+  const visibleNow = [], targets = [];
+  all.forEach(el => {
+    if (nested(el)) return;
+    (el.getBoundingClientRect().top > below ? targets : visibleNow).push(el);
+  });
   if (!targets.length) return;
   root.classList.add('motion');
+  // Things already on screen skip the hiding but still get their finishing touches (e.g. step lines).
+  visibleNow.forEach(el => el.classList.add('m-in'));
 
-  const finish = el => { el.removeAttribute('data-m'); el.classList.remove('m-in'); el.style.removeProperty('--md'); };
+  // Split headings that sit below the fold into masked words, so they can rise as they arrive.
+  const splitWords = h => {
+    let n = 0;
+    const walk = node => {
+      [...node.childNodes].forEach(c => {
+        if (c.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(t => {
+            if (!t) return;
+            if (/^\s+$/.test(t)) { frag.append(t); return; }
+            const w = document.createElement('span'), inner = document.createElement('span');
+            w.className = 'w sw'; w.style.setProperty('--wi', n++);
+            inner.textContent = t; w.append(inner); frag.append(w);
+          });
+          c.replaceWith(frag);
+        } else if (c.nodeType === 1 && c.tagName !== 'BR' && c.tagName.toLowerCase() !== 'svg') walk(c);
+      });
+    };
+    walk(h);
+  };
+  targets.forEach(t => {
+    const heads = t.matches('h2') ? [t] : [...t.querySelectorAll('h2')];
+    heads.filter(h => !h.classList.contains('stage-heading') && !h.querySelector('svg') && !h.querySelector('.w'))
+         .forEach(splitWords);
+  });
+
+  // Keep the data-m state long enough for the slowest transition to finish, then hand the element back.
+  const finish = el => { el.removeAttribute('data-m'); el.style.removeProperty('--md'); };
   const reveal = (el, i) => {
     const delay = Math.min(i, 5) * 80;
     el.style.setProperty('--md', delay + 'ms');
     el.classList.add('m-in');
-    setTimeout(() => finish(el), 950 + delay);
+    setTimeout(() => finish(el), 2800 + delay);
   };
   const io = new IntersectionObserver(entries => {
     let i = 0;

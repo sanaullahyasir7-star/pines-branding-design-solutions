@@ -30,7 +30,7 @@ The .github/workflows/pages.yml workflow publishes the allowlisted static site w
 
 - index.html — homepage
 - services/, work/, process/, about/, faq/, start-project/, contact/ — public sections
-- assets/site.css, assets/site.js — shared visual system, fonts and interactions, including the motion layer (hero entrance, scroll reveals, hover polish, progress bar). Motion switches itself off for visitors who prefer reduced motion.
+- assets/site.css, assets/site.js — shared visual system, fonts and interactions, including the motion layer (word-by-word headlines, scroll reveals, image curtains, hero parallax and tilt, hover polish, progress bar). Motion switches itself off for visitors who prefer reduced motion.
 - assets/fonts/ — self-hosted DM Sans and Zilla Slab (SIL Open Font License); no requests go to Google Fonts
 - assets/brief.js — project planner, WhatsApp message, copy and download behavior
 - assets/contact-page.js — contact-page behavior and copy actions

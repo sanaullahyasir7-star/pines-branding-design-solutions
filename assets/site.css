@@ -602,7 +602,7 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 
   /* Hero entrance. Headings use transform only so the largest text paints without delay. */
   :is(.bh-intro,.bh-hero-copy,.page-hero,.services-hero-copy)>*{animation:m-rise .7s cubic-bezier(.22,.61,.36,1) both}
-  :is(.bh-intro,.bh-hero-copy,.page-hero,.services-hero-copy)>h1{animation-name:m-slide;animation-duration:.8s}
+  :is(.bh-intro,.bh-hero-copy,.page-hero,.services-hero-copy)>h1{animation:none}
   :is(.bh-intro,.page-hero,.services-hero-copy)>:nth-child(1){animation-delay:.04s}
   :is(.bh-intro,.page-hero,.services-hero-copy)>:nth-child(2){animation-delay:.1s}
   :is(.page-hero,.services-hero-copy)>:nth-child(3){animation-delay:.2s}
@@ -660,3 +660,55 @@ html.js .contact-page .contact-card[data-reveal]:nth-child(3){transition-delay:2
 }
 
 @media print{html.motion [data-m]{opacity:1!important;transform:none!important}.m-progress{display:none}}
+
+/* ==== Signature motion (second layer) ====
+   Word-by-word headlines, image curtains, hero parallax and tilt, magnetic buttons and
+   drawn step lines. Same rule as before: nothing here runs for reduced-motion visitors. */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em .08em .14em 0;margin:-.14em -.08em -.14em 0}
+.w>span{display:inline-block}
+
+@media (prefers-reduced-motion:no-preference){
+  @keyframes m-word{from{transform:translateY(108%) rotate(4deg)}to{transform:none}}
+  @keyframes m-curtain{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+  @keyframes m-zoom-settle{from{scale:1.18}to{scale:1}}
+  @keyframes m-drift-up{to{translate:0 -40px}}
+  @keyframes m-drift-down{to{translate:0 28px}}
+
+  /* Page headlines: each word rises from behind a mask. */
+  .w>span{will-change:transform;animation:m-word 1s cubic-bezier(.2,.85,.2,1) both;animation-delay:calc(.08s + var(--wi,0)*75ms)}
+
+  /* Headlines further down the page (split by site.js) rise when they scroll into view. */
+  html.motion h2[data-m]{opacity:1;transform:none}
+  .w.sw>span{animation:none}
+  html.motion [data-m]:not(.m-in) .w>span{transform:translateY(108%) rotate(4deg)}
+  html.motion [data-m].m-in .w>span{transform:none;transition:transform 1s cubic-bezier(.2,.85,.2,1) calc(var(--md,0ms) + 120ms + var(--wi,0)*70ms)}
+
+  /* Image curtain: pictures wipe upward into place while settling from a slight zoom. */
+  html.motion [data-m]:not(.m-in) :is(.bh-work-card figure,.service-card-image){clip-path:inset(100% 0 0 0)}
+  html.motion [data-m].m-in :is(.bh-work-card figure,.service-card-image){animation:m-curtain 1.1s cubic-bezier(.77,0,.18,1) calc(var(--md,0ms) + 80ms) both}
+  html.motion [data-m]:not(.m-in) :is(.bh-work-card figure,.service-card-image) img{scale:1.18}
+  html.motion [data-m].m-in :is(.bh-work-card figure,.service-card-image) img{animation:m-zoom-settle 1.5s cubic-bezier(.2,.8,.2,1) calc(var(--md,0ms) + 80ms) both}
+  /* Gallery pictures are clipped on the image, never on the observed figure, so they can still be detected as on screen. */
+  html.motion .client-project-gallery>[data-m]:not(.m-in) img{clip-path:inset(100% 0 0 0)}
+  html.motion .client-project-gallery>[data-m].m-in img{animation:m-curtain 1.1s cubic-bezier(.77,0,.18,1) calc(var(--md,0ms) + 80ms) both}
+  html.motion .bh-service[data-m]:not(.m-in) img{clip-path:inset(100% 0 0 0)}
+  html.motion .bh-service[data-m].m-in img{animation:m-curtain 1s cubic-bezier(.77,0,.18,1) calc(var(--md,0ms) + 80ms) both}
+
+  /* Process steps: the top rule draws across as each step arrives. */
+  .bh-steps li{position:relative}
+  html.motion .bh-steps li::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--pine);transform:scaleX(0);transform-origin:0 50%;transition:transform 1.1s cubic-bezier(.2,.8,.2,1) calc(var(--md,0ms) + 300ms)}
+  html.motion .bh-steps li.m-in::before{transform:scaleX(1)}
+
+  /* Scroll-driven drift: the hero picture and the branches move at different speeds. */
+  @supports (animation-timeline:scroll()){
+    .bh-hero-visual{animation:m-drift-up linear both;animation-timeline:scroll(root);animation-range:0 720px}
+    .bh-branch--top{animation:m-sway 11s ease-in-out infinite,m-drift-down linear both;animation-timeline:auto,scroll(root);animation-range:normal,0 720px}
+    .bh-branch--bottom{animation:m-sway 14s ease-in-out infinite reverse,m-drift-up linear both;animation-timeline:auto,scroll(root);animation-range:normal,0 720px}
+  }
+}
+
+/* Pointer-only touches: a gentle 3D tilt on the hero picture and magnetic main buttons. */
+@media (prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine){
+  .bh-hero-visual{transform:perspective(1200px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+  a.button,.site-header .cta{translate:var(--mx,0px) var(--my,0px);transition:background .2s ease,transform .2s ease,box-shadow .2s ease,color .2s ease,translate .3s cubic-bezier(.2,.8,.2,1)}
+}
