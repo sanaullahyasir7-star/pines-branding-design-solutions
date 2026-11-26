@@ -1,0 +1,178 @@
+/* ==== Pines premium layer ====
+   Loaded last on every page. Uses only the existing brand tokens (pine green, cream,
+   kraft, olive; Zilla Slab display + DM Sans body). Refines spacing, depth, hover states
+   and easing. All movement respects prefers-reduced-motion. */
+
+:root{
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-in-out:cubic-bezier(.65,0,.35,1);
+  --gold:#b88a56;           /* lighter kraft for hairlines on pine */
+  --pine-deep:#012c1b;
+  --shadow-soft:0 1px 2px rgba(4,40,25,.04),0 12px 32px -18px rgba(4,40,25,.28);
+  --shadow-lift:0 2px 4px rgba(4,40,25,.05),0 30px 60px -28px rgba(4,40,25,.45);
+}
+
+/* ---------- Smooth scrolling (Lenis) ---------- */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+
+/* ---------- Base refinement ---------- */
+body{text-rendering:optimizeLegibility;font-feature-settings:"kern","liga"}
+::selection{background:var(--pine);color:var(--cream)}
+/* Fine paper grain over the cream surfaces: a premium, printed feel. */
+body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.02 0 0 0 0 0.16 0 0 0 0 0.1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media print{body::after{display:none}}
+
+h1,h2{text-wrap:balance}
+p{text-wrap:pretty}
+.eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:11px;letter-spacing:.24em}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.55;flex:none}
+.bh-contact .eyebrow::before,.bh-contact .eyebrow::after{width:28px}
+.bh-contact .eyebrow::after{content:"";height:1px;background:currentColor;opacity:.55}
+
+/* ---------- Announcement + header: quiet, glassy, precise ---------- */
+.announcement{min-height:32px;font-size:10px;letter-spacing:.28em;background:var(--pine-deep)}
+.site-header{background:rgba(250,249,245,.82);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border-bottom-color:rgba(4,64,42,.12);transition:background .5s var(--ease-out),box-shadow .5s var(--ease-out)}
+.site-header.is-stuck{background:rgba(250,249,245,.92);box-shadow:0 10px 30px -22px rgba(4,40,25,.5)}
+@media(min-width:761px){
+  .nav{min-height:78px;transition:min-height .5s var(--ease-out)}
+  .site-header.is-stuck .nav{min-height:66px}
+  .brand img{transition:width .5s var(--ease-out)}
+  .site-header.is-stuck .brand img{width:170px}
+  .navlinks{font-size:13.5px;letter-spacing:.01em}
+  .navlinks a:not(.cta):after{bottom:2px;transform:scaleX(0);transform-origin:100% 50%;width:100%!important;transition:transform .5s var(--ease-out)}
+  .navlinks a:hover:after,.navlinks a[aria-current=page]:after{transform:scaleX(1);transform-origin:0 50%}
+}
+@media(max-width:760px){
+  .site-header{background:rgba(250,249,245,.96)}
+  .navlinks{background:var(--paper);box-shadow:0 24px 40px -20px rgba(4,40,25,.35)}
+  .navlinks.open{animation:p-menu .45s var(--ease-out) both}
+}
+@keyframes p-menu{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* The supplied logo sits on white; multiply lets it sit cleanly on the glass header. */
+.brand img{mix-blend-mode:multiply}
+
+/* ---------- Buttons: ink-fill wipe with an arrow that travels ---------- */
+.button,.cta{position:relative;isolation:isolate;overflow:hidden;border-radius:0;padding:.85rem 1.5rem;letter-spacing:.02em;
+  transition:color .5s var(--ease-out),border-color .5s var(--ease-out),box-shadow .5s var(--ease-out),transform .5s var(--ease-out),translate .4s var(--ease-out)!important}
+.button::before,.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--kraft);transform:translateY(101%);border-radius:inherit;transition:transform .55s var(--ease-out)}
+.button:hover,.cta:hover{background:var(--pine-dark);transform:none;box-shadow:0 14px 28px -16px rgba(4,40,25,.7)}
+.button:hover::before,.cta:hover::before,.button:focus-visible::before,.cta:focus-visible::before{transform:translateY(0)}
+a.button::after{content:"→";display:inline-block;transition:transform .5s var(--ease-out)}
+a.button:hover::after{transform:translateX(4px)}
+.cta>span:empty{display:none}
+/* Light buttons on pine surfaces. */
+.bh-contact .button,.contact-panel .button,.form-panel .button{color:var(--pine)}
+.bh-contact .button:hover,.contact-panel .button:hover,.form-panel .button:hover{color:var(--cream);border-color:var(--kraft)}
+.bh-contact .button::before,.contact-panel .button::before,.form-panel .button::before{background:var(--kraft)}
+.form-panel button.button::after{content:none}
+
+/* Text links: underline that redraws from the left. */
+.bh-link,.inline-link,.text-arrow{position:relative;padding-top:0!important;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:.25rem;text-decoration:none!important;transition:background-size .6s var(--ease-out),color .3s ease}
+.bh-link:hover,.inline-link:hover,.text-arrow:hover{background-size:0 1px;background-position:100% 100%}
+.inline-link:after{display:none}
+
+/* ---------- Home hero ---------- */
+.brand-home .bh-hero{background:radial-gradient(120% 90% at 85% 10%,rgba(255,255,255,.55),transparent 55%),var(--cream)}
+.brand-home .bh-intro h1{font-size:clamp(58px,7.4vw,108px);line-height:.92;letter-spacing:-.06em}
+.brand-home .bh-intro h1 em{color:var(--kraft)}
+.brand-home .bh-hero-visual img{box-shadow:var(--shadow-lift)}
+.brand-home .bh-hero-visual img{transition:transform 1.4s var(--ease-out)}
+.brand-home .bh-hero-visual:hover img{transform:scale(1.025)}
+.brand-home .bh-hero-copy p{font-size:clamp(17px,1.3vw,19px);line-height:1.6}
+.bh-location{letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+
+/* Brand strip: softer, editorial italics with kraft dots. */
+.brand-marquee-group span{transition:color .4s ease,opacity .4s ease}
+.brand-marquee:hover .brand-marquee-group span{opacity:.55}
+.brand-marquee:hover .brand-marquee-group span:hover{opacity:1;color:#fff}
+
+/* ---------- Section rhythm ---------- */
+.bh-section{padding-block:clamp(84px,10vw,150px)}
+.bh-section-heading{margin-bottom:clamp(2.2rem,4vw,3.5rem)}
+.bh-section-heading h2,.section-heading h2{font-size:clamp(44px,5.6vw,80px);line-height:.98}
+h2 em,h1 em{color:var(--olive-dark)}
+.section-green h2 em,.bh-contact h2 em,.footer h2 em{color:var(--gold)}
+
+/* ---------- Cards: image zoom inside a fixed frame, slow and weighted ---------- */
+.bh-work-card figure,.bh-service picture,.service-card-image,.showcase-photo,.client-project-gallery figure{overflow:hidden}
+.bh-work-card img,.bh-service img,.service-card-image img,.client-project-gallery img{transition:transform 1.2s var(--ease-out),filter .8s ease!important}
+@media(hover:hover) and (pointer:fine){
+  .bh-work-card:hover img,.bh-work-card:focus-visible img,.bh-service:hover img,.bh-service:focus-visible img,
+  .service-card-image:hover img,.client-project-gallery figure:hover img{transform:scale(1.06)}
+  .bh-work-card figure,.bh-service{transition:transform .8s var(--ease-out),box-shadow .8s var(--ease-out)!important}
+  .bh-work-card:hover figure{box-shadow:var(--shadow-lift)!important}
+  .bh-service:hover,.bh-service:focus-visible{transform:translateY(-6px)!important}
+  .bh-work-card-title span{display:inline-block;transition:transform .5s var(--ease-out)}
+  .bh-work-card:hover .bh-work-card-title span{transform:translate(3px,-3px)}
+}
+.bh-work-card figcaption,.bh-hero-visual figcaption{letter-spacing:.16em}
+
+/* Process steps: numbers set in the display face. */
+.bh-steps li>span{font-family:var(--display);font-size:15px;letter-spacing:.08em;color:var(--kraft)}
+
+/* Testimonials: paper cards with soft depth. */
+.testimonial-card{border:1px solid rgba(4,64,42,.1);border-top:3px solid var(--pine);box-shadow:var(--shadow-soft);transition:transform .8s var(--ease-out),box-shadow .8s var(--ease-out)}
+@media(hover:hover) and (pointer:fine){.testimonial-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift)}}
+.testimonial-quote-mark{color:var(--kraft);fill:currentColor;opacity:.55}
+
+/* ---------- Closing call to action: deep pine with a soft glow ---------- */
+.bh-contact{position:relative;overflow:hidden;background:radial-gradient(70% 90% at 50% 0%,rgba(149,104,59,.22),transparent 60%),radial-gradient(60% 80% at 50% 120%,rgba(102,117,75,.35),transparent 60%),var(--pine-deep)}
+.bh-contact h2{font-size:clamp(48px,6.5vw,96px);line-height:.95}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--pine-deep);padding-top:5rem}
+.footer ul a,.footer-contact a,.footer-meta a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease-out),color .3s ease}
+.footer ul a:hover,.footer-contact a:hover,.footer-meta a:hover{background-size:100% 1px;color:#fff}
+.footer .text-arrow{background:none}
+
+/* ---------- Inner pages ---------- */
+.page-hero h1{letter-spacing:-.06em;line-height:.94}
+.service-card,.portfolio-card,.contact-card{transition:transform .8s var(--ease-out),box-shadow .8s var(--ease-out),border-color .5s ease!important}
+details summary{transition:color .3s ease,padding-left .5s var(--ease-out)!important}
+.form-panel input,.form-panel select,.form-panel textarea{transition:border-color .3s ease,box-shadow .3s ease,background .3s ease}
+.form-panel input:focus,.form-panel select:focus,.form-panel textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,138,86,.45)}
+
+/* Reading progress: a fine kraft line. */
+.m-progress{height:2px!important;background:linear-gradient(90deg,var(--kraft),var(--pine))!important}
+
+/* ---------- Smoother, weightier motion timings ---------- */
+@media (prefers-reduced-motion:no-preference){
+  html.motion [data-m]{transition-duration:1.1s!important;transition-timing-function:var(--ease-out)!important;transform:translateY(36px)}
+  html.motion [data-m].m-in{transform:none}
+  .w>span{animation-duration:1.25s!important;animation-timing-function:var(--ease-out)!important}
+  ::view-transition-old(root){animation:p-fade-out .35s var(--ease-in-out) both}
+  ::view-transition-new(root){animation:p-fade-in .6s var(--ease-out) both}
+  @keyframes p-fade-out{to{opacity:0;transform:translateY(-10px)}}
+  @keyframes p-fade-in{from{opacity:0;transform:translateY(14px)}}
+}
+
+/* Cursor follower on work imagery (desktop pointers only). */
+.p-cursor{position:fixed;left:0;top:0;z-index:150;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;display:grid;place-items:center;
+  background:var(--pine);color:var(--cream);font:600 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;pointer-events:none;
+  transform:translate3d(var(--cx,-200px),var(--cy,-200px),0) scale(0);transition:transform .5s var(--ease-out);will-change:transform}
+.p-cursor.on{transform:translate3d(var(--cx),var(--cy),0) scale(1)}
+@media (prefers-reduced-motion:reduce),(hover:none),(pointer:coarse){.p-cursor{display:none}}
+
+@media (prefers-reduced-motion:reduce){
+  .button::before,.cta::before,.button::after{transition:none}
+  .bh-work-card img,.bh-service img,.service-card-image img,.client-project-gallery img{transition:none!important;transform:none!important}
+  .navlinks.open{animation:none}
+}
+
+/* Mobile spacing balance. */
+@media(max-width:760px){
+  .bh-section{padding-block:72px}
+  .brand-home .bh-intro h1{font-size:clamp(50px,14vw,72px)}
+  .button,.cta{padding-inline:1.25rem}
+  .footer{padding-top:3.5rem}
+}
+
+/* .bh-link keeps its 44px tap target; draw the underline just under the text. */
+.bh-link{background-position:0 calc(100% - 9px);padding-bottom:0}
+.bh-link:hover{background-position:100% calc(100% - 9px)}
+

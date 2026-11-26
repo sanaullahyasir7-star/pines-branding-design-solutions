@@ -8,3 +8,9 @@
 - Keep testimonials, business details and sustainability statements empty or clearly marked until supported by client-approved facts.
 - Use restrained reveals, a slow marquee, underline hover states, expandable FAQs and a mobile menu; all motion respects reduced-motion settings.
 - Make the quote form ready for connection but do not imply a message was sent while no verified provider endpoint is configured.
+
+## Premium layer (November 2026)
+
+- `assets/premium.css` and `assets/premium.js` load last on every page and refine the existing system without changing content or brand assets.
+- Smooth inertial scrolling uses Lenis 1.1.13 (MIT, self-hosted as `assets/lenis.min.js`) on desktop pointers only; touch devices and reduced-motion visitors keep native scrolling. Same-page anchor links glide and clear the sticky header.
+- Glass header that tightens on scroll, kraft fill-wipe buttons with a travelling arrow (square corners kept), redrawn underlines, slow image zoom inside fixed frames, a "View" cursor on project imagery, subtle paper grain, kraft italic accents, softer depth on cards and testimonials, and weightier easing for reveals and page transitions.
